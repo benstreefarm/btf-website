@@ -1,0 +1,52 @@
+<nav class="navbar">
+  <div class="logo">Ben's Christmas Tree Farm</div>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/trees">Our Trees</a></li>
+    <li><a href="/contact">Contact</a></li>
+  </ul>
+</nav>
+
+<style>
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    position: fixed;
+    top: 0;
+    width: 90%; /* Account for the padding */
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.3); /* Glassmorphism effect */
+    backdrop-filter: blur(5px);
+    color: #fdf5e6;
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: inherit;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover {
+    color: #4f7942; /* Pine Green hover state */
+  }
+
+  .logo {
+    font-family: Georgia, serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+</style>

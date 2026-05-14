@@ -1,0 +1,110 @@
+
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+---
+
+<Layout title="Contact Us">
+  <Navigation />
+  
+  <div class="background-overlay">
+    <img src="/DJI_0850sm.jpg" alt="Ben's Christmas Tree Farm" class="bg-image" />
+  </div>
+
+  <main class="content-container">
+    <div class="glass-box">
+      <h1>Contact Us</h1>
+      
+      <div class="contact-grid">
+        <div class="contact-info">
+          <p><strong>Ben's Christmas Tree Farm</strong><br />
+          7719 Ryan Road<br />
+          Harvard, IL 60033</p>
+          
+          <p><strong>Phone:</strong> (630) 279-0216<br />
+          <strong>Email:</strong> treefarm@gmail.com</p>
+        </div>
+
+        <div class="form-container">
+          <!-- <script type="text/javascript" src="https://form.jotform.com/jsform/53238993165162"></script> -->
+          <script type="text/javascript" src="https://form.jotform.com/jsform/261328901256052"></script>
+        </div>
+       
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  /* Reuse your existing background styles */
+  .background-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1;
+    background-color: var(--pine-dark);
+  }
+  .bg-image {
+    width: 100%; height: 100%; object-fit: cover;
+    opacity: 0.3;
+  }
+
+  .content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 120px 20px 60px;
+  }
+
+  .glass-box {
+    max-width: 900px;
+    width: 100%;
+    background: rgba(26, 46, 26, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 3rem;
+    border-radius: 8px;
+    border: 1px solid var(--pine-accent);
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns on desktop */
+    gap: 3rem;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .contact-grid { grid-template-columns: 1fr; } /* Stacks on mobile */
+  }
+
+  h1 { border-bottom: 2px solid var(--pine-accent); padding-bottom: 10px; }
+
+  /* Form Styling */
+  .form-group { margin-bottom: 1.5rem; display: flex; flex-direction: column; }
+  
+  label { margin-bottom: 0.5rem; font-weight: bold; color: var(--cream); }
+
+  input, textarea {
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--pine-accent);
+    color: white;
+    border-radius: 4px;
+    font-family: inherit;
+  }
+
+  .submit-btn {
+    background: var(--pine-accent);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background 0.3s;
+  }
+
+  .submit-btn:hover { background: #5a8a4b; }
+  .form-note { font-size: 0.8rem; font-style: italic; opacity: 0.7; margin-top: 10px; }
+</style>

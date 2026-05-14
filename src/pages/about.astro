@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+---
+
+<Layout title="About Us">
+  <Navigation />
+  
+  <div class="background-overlay">
+    <img src="/DJI_0850sm.jpg" alt="Ben's Christmas Tree Farm aerial view" class="bg-image" />
+  </div>
+
+  <main class="content-container">
+    <div class="glass-box">
+      <h1>Our Story</h1>
+      <p>
+        At Ben's, it's all about the trees. Starting with the finest quality seedlings, 
+        Ben has been growing and nurturing 100% hand-pruned firs and pines since 1982. 
+        We have thousands of trees in 8 varieties of firs and pines, from 6 to 15 feet tall. 
+        We use organic farming practices, and all trees are pesticide-free.
+      </p>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: var(--pine-dark); /* Fills in while image loads */
+  }
+
+  .bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.35; /* Keeps it subtle so text remains the focus */
+    filter: saturate(0.8); /* Slightly desaturates to look more "classic" */
+  }
+
+  .content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 120px 20px 60px;
+  }
+
+  .glass-box {
+    max-width: 800px;
+    background: rgba(26, 46, 26, 0.7); /* Dark green with transparency */
+    backdrop-filter: blur(8px);       /* Blurs the farm image behind the box */
+    padding: 3rem;
+    border-radius: 8px;
+    border: 1px solid var(--pine-accent);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-top: 0;
+    border-bottom: 2px solid var(--pine-accent);
+    padding-bottom: 15px;
+  }
+
+  p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+  }
+</style>

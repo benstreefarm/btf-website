@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro Basics</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<!-- <style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+</style> -->
+<style is:global>
+  :root {
+    --pine-dark: #1a2e1a;    /* Deep forest green background */
+    --pine-accent: #4f7942;  /* A lighter green for lines */
+    --cream: #fdf5e6;        /* Your warm text color */
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--pine-dark); /* Sets the whole site to dark green */
+    color: var(--cream);
+    font-family: Georgia, serif;
+  }
+</style>
