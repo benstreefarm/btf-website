@@ -7,46 +7,71 @@
     <li><a href="/contact">Contact</a></li>
   </ul>
 </nav>
-
 <style>
   .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5%;
-    position: fixed;
+    padding: 1rem 2rem;
+    background: rgba(26, 46, 26, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--pine-accent);
+    position: sticky;
     top: 0;
-    width: 90%; /* Account for the padding */
-    z-index: 100;
-    background: rgba(0, 0, 0, 0.3); /* Glassmorphism effect */
-    backdrop-filter: blur(5px);
-    color: #fdf5e6;
-  }
-
-  .nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
-  }
-
-  .nav-links a {
-    text-decoration: none;
-    color: inherit;
-    font-family: 'Trebuchet MS', sans-serif;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-    transition: color 0.3s;
-  }
-
-  .nav-links a:hover {
-    color: #4f7942; /* Pine Green hover state */
+    z-index: 1000;
+    /* This is the key: allow items to wrap to a new line if they don't fit */
+    flex-wrap: wrap; 
   }
 
   .logo {
     font-family: Georgia, serif;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
+    color: var(--cream);
+    text-decoration: none;
+    /* Ensure the logo doesn't get squashed */
+    flex: 1 1 auto;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links a {
+    color: var(--cream);
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+
+  /* Mobile-Specific Adjustment */
+  @media (max-width: 600px) {
+    .navbar {
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .logo {
+      text-align: center;
+      width: 100%; /* Forces the logo to take its own line */
+      margin-bottom: 0.5rem;
+    }
+
+    .nav-links {
+      gap: 1rem;
+      justify-content: center;
+      width: 100%;
+    }
+    
+    .nav-links a {
+      font-size: 0.8rem; /* Slightly smaller text for tight spaces */
+    }
   }
 </style>
