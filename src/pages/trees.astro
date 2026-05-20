@@ -26,30 +26,20 @@ import Navigation from "../components/Navigation.astro";
             <div class="tree-grid">
                 <div class="tree-card">
                     <h3>Fraser Fir</h3>
-                    <p>
-                        Known as the "King of Trees," Fraser Firs offer
-                        excellent needle retention and a pleasant scent.
-                    </p>
+                    <p>Known as the "King of Trees," Fraser Firs offer excellent needle retention and a pleasant scent.</p>
                 </div>
 
                 <div class="tree-card">
                     <h3>Balsam Fir</h3>
-                    <p>
-                        A classic favorite with dark green needles and the
-                        strongest "Christmas tree" fragrance.
-                    </p>
+                    <p>A classic favorite with dark green needles and the strongest "Christmas tree" fragrance.</p>
                 </div>
 
                 <div class="tree-card">
                     <h3>Canaan Fir</h3>
-                    <p>
-                        A beautiful hybrid that combines the best traits of
-                        Fraser and Balsam firs.
-                    </p>
+                    <p>A beautiful hybrid that combines the best traits of Fraser and Balsam firs.</p>
                 </div>
-
-                <!-- You can add the remaining 5 varieties here -->
             </div>
+
             <div class="complete-list-section">
                 <h3>Complete list of varieties:</h3>
                 <ul class="variety-list">
@@ -63,64 +53,73 @@ import Navigation from "../components/Navigation.astro";
                     <li>White Pine</li>
                 </ul>
             </div>
-            <div class="cta-section">
-                <p>Our trees are certified naturally grown! No herbicides or pesticides are ever used on our farm. </p>
-                <!-- <a href="/contact" class="cta-button">Inquire About Bulk Orders</a> -->
-            </div>
-            <div class="calendar-container">
-                <h3>Season Schedule 2026</h3>
-                <div class="legend">
-                    <span class="tag green">9:00 AM - 4:30 PM</span>
-                    <span class="tag blue">10:00 AM - 4:30 PM</span>
+
+            <div class="calendar-section">
+                <h2>2026 Season Schedule & Pricing</h2>
+                
+                <div class="price-info">
+                    <p><strong>Pines:</strong> Starting at $52 ($8 per foot with 6.5 foot minimum)</p>
+                    <p><strong>Firs and Spruces:</strong> Starting at $98 ($15 per foot with 6.5 foot minimum)</p>
+                    <p class="organic-note">Our farm is 100% herbicide-free and pesticide-free</p>
                 </div>
 
-                <div class="month">
-                    <div class="month-header">November 2026</div>
-                    <div class="days-grid">
-                        <!-- Weekday Headers -->
-                        <span>Su</span><span>Mo</span><span>Tu</span><span
-                            >We</span
-                        ><span>Th</span><span>Fr</span><span>Sa</span>
+                <div class="legend">
+                    <div class="legend-item"><span class="color-box green-box"></span> 9:00 AM - 4:30 PM</div>
+                    <div class="legend-item"><span class="color-box blue-box"></span> 10:00 AM - 4:30 PM</div>
+                    <p class="santa-note"><em>(Closed all other days. Santa typically available from 10 AM to 3 PM)</em></p>
+                </div>
 
-                        <!-- Day Cells (Example for late Nov) -->
-                        <div class="empty"></div><div class="empty"></div><div
-                            class="empty"
-                        >
+                <div class="calendar-flex-container">
+                    <div class="month-card">
+                        <div class="month-title">November 2026</div>
+                        <div class="calendar-grid">
+                            <div class="day-label">Su</div><div class="day-label">Mo</div><div class="day-label">Tu</div><div class="day-label">We</div><div class="day-label">Th</div><div class="day-label">Fr</div><div class="day-label">Sa</div>
+                            
+                            <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div>
+                            <div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div>
+                            <div>15</div><div>16</div><div>17</div><div>18</div><div>19</div><div>20</div><div>21</div>
+                            <div>22</div><div>23</div><div>24</div><div>25</div><div>26</div>
+                            <div class="open-green">27</div><div class="open-green">28</div>
+                            <div class="open-blue">29</div><div>30</div>
+                            <div class="pad"></div><div class="pad"></div><div class="pad"></div><div class="pad"></div><div class="pad"></div>
                         </div>
-                        <div class="empty"></div><div class="empty"></div><div
-                            class="empty"
-                        >
-                        </div><span>1</span>
-                        <!-- ... skip to the green days seen in image_bd6228.png ... -->
-                        <span>22</span><span>23</span><span>24</span><span
-                            >25</span
-                        ><span>26</span>
-                        <span class="green-day">27</span><span class="green-day"
-                            >28</span
-                        >
-                        <span class="blue-day">29</span><span class="empty"
-                        ></span>
+                    </div>
+
+                    <div class="month-card">
+                        <div class="month-title">December 2026</div>
+                        <div class="calendar-grid">
+                            <div class="day-label">Su</div><div class="day-label">Mo</div><div class="day-label">Tu</div><div class="day-label">We</div><div class="day-label">Th</div><div class="day-label">Fr</div><div class="day-label">Sa</div>
+                            
+                            <div class="pad"></div><div class="pad"></div>
+                            <div>1</div><div>2</div><div>3</div><div>4</div><div class="open-green">5</div>
+                            <div class="open-blue">6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div class="open-green">12</div>
+                            <div class="open-blue">13</div><div>14</div><div>15</div><div>16</div><div>17</div><div>18</div><div>19</div>
+                            <div>20</div><div>21</div><div>22</div><div>23</div><div>24</div><div>25</div><div>26</div>
+                            <div>27</div><div>28</div><div>29</div><div>30</div><div>31</div>
+                            <div class="pad"></div><div class="pad"></div>
+                        </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="cta-section">
+                <p>Our trees are certified naturally grown!</p>
             </div>
         </div>
     </main>
 </Layout>
 
 <style>
+    /* GLOBAL LAYOUT STYLES */
     .background-overlay {
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        top: 0; left: 0; width: 100%; height: 100%;
         z-index: -1;
         background-color: var(--pine-dark);
     }
+    
     .bg-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        width: 100%; height: 100%; object-fit: cover;
         opacity: 0.3;
     }
 
@@ -133,7 +132,7 @@ import Navigation from "../components/Navigation.astro";
     .glass-box {
         max-width: 1000px;
         width: 100%;
-        background: rgba(26, 46, 26, 0.8);
+        background: rgba(26, 46, 26, 0.85);
         backdrop-filter: blur(10px);
         padding: 3rem;
         border-radius: 8px;
@@ -141,11 +140,9 @@ import Navigation from "../components/Navigation.astro";
         color: var(--cream);
     }
 
-    h1 {
-        border-bottom: 2px solid var(--pine-accent);
-        padding-bottom: 10px;
-    }
+    h1 { border-bottom: 2px solid var(--pine-accent); padding-bottom: 10px; font-family: Georgia, serif; }
 
+    /* TREE GRID STYLES */
     .tree-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -160,71 +157,107 @@ import Navigation from "../components/Navigation.astro";
         border-left: 4px solid var(--pine-accent);
     }
 
+    .tree-card h3 { color: var(--cream); margin-bottom: 0.5rem; }
+
+    /* COMPLETE LIST STYLES */
+    .complete-list-section {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .complete-list-section h3 {
+        font-family: Georgia, serif;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .variety-list {
+        list-style-type: '✓ ';
+        padding-left: 1rem;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 0.5rem 2rem; 
+    }
+
+    .variety-list li { font-size: 1.05rem; opacity: 0.95; }
+
+    /* REFACTORED CALENDAR STYLES */
+    .calendar-section {
+        margin-top: 3.5rem;
+        padding-top: 2.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .calendar-section h2 { font-family: Georgia, serif; margin-bottom: 1.5rem; }
+    
+    .price-info { line-height: 1.6; margin-bottom: 1.5rem; font-size: 1.05rem; }
+    .organic-note { font-style: italic; color: #a3cea0; }
+
+    .legend { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 2rem; }
+    .legend-item { display: flex; align-items: center; gap: 0.75rem; }
+    
+    .color-box { display: inline-block; width: 3.5rem; height: 1.25rem; border-radius: 2px; }
+    .green-box, .open-green { background-color: #109661 !important; color: white !important; font-weight: bold; }
+    .blue-box, .open-blue { background-color: #6a6aff !important; color: white !important; font-weight: bold; }
+    .santa-note { font-size: 0.95rem; opacity: 0.85; margin-top: 0.25rem; }
+
+    .calendar-flex-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2.5rem;
+    }
+
+    .month-card {
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    .month-title {
+        background-color: #8b3a2b;
+        color: white;
+        text-align: center;
+        padding: 0.8rem;
+        font-weight: bold;
+        font-size: 1.1rem;
+        letter-spacing: 0.5px;
+    }
+
+    /* New solid-grid trick for perfect borders */
+    .calendar-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 1px; /* Creates the border lines */
+        background: #e2e8f0; /* Color of the borders */
+        border: 1px solid #e2e8f0; /* Outer border */
+    }
+
+    .calendar-grid div {
+        background: #ffffff; /* Cell background */
+        color: #222222;
+        padding: 0.75rem 0;
+        text-align: center;
+        font-weight: 500;
+        font-size: 0.95rem;
+    }
+
+    .calendar-grid .day-label {
+        background: #f8fafc;
+        color: #4a5568;
+        font-weight: bold;
+        font-size: 0.9rem;
+    }
+
+    .calendar-grid .pad { background: #f1f5f9; }
+
     .cta-section {
         margin-top: 3rem;
         text-align: center;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         padding-top: 2rem;
-    }
-
-    .cta-button {
-        display: inline-block;
-        background: var(--pine-accent);
-        color: white;
-        padding: 12px 24px;
-        text-decoration: none;
-        border-radius: 4px;
         font-weight: bold;
-        margin-top: 1rem;
+        font-size: 1.1rem;
     }
-
-    <style>
-  .calendar-container {
-    margin-top: 2rem;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 1.5rem;
-    border-radius: 8px;
-  }
-
-  .legend {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 1rem;
-  }
-
-  .tag {
-    padding: 4px 8px;
-    font-size: 0.8rem;
-    color: white;
-    border-radius: 3px;
-  }
-
-  .green { background-color: #109661; } /* Matches image_bd6228.png */
-  .blue { background-color: #6a6aff; }
-
-  .month-header {
-    background: #8b3a2b; /* Matches that brick-red in your screenshot */
-    color: white;
-    text-align: center;
-    padding: 5px;
-    font-weight: bold;
-  }
-
-  .days-grid {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    text-align: center;
-    background: white; /* Keeps the high contrast from the original */
-    color: #333;
-  }
-
-  .days-grid span, .days-grid div {
-    padding: 10px;
-    border: 1px solid #ddd;
-    font-weight: bold;
-  }
-
-  .green-day { background-color: #109661; color: white; }
-  .blue-day { background-color: #6a6aff; color: white; }
-  .empty { background-color: #eee; }
 </style>

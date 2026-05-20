@@ -1,0 +1,207 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
+---
+
+<Layout title="Directions & Visit Info - Ben's Christmas Tree Farm">
+    <Navigation />
+
+    <div class="background-overlay">
+        <img src="/DJI_0850sm.jpg" alt="Aerial view of the farm" class="bg-image" />
+    </div>
+
+    <main class="content-container">
+        <div class="glass-box">
+            <h1>Planning Your Visit</h1>
+            
+            <div class="address-block">
+                <h2>Ben's Christmas Tree Farm</h2>
+                <p class="address">7719 Ryan Road<br/>Harvard, IL 60033</p>
+                <p class="address-note">Located at the very end of Ryan Road</p>
+            </div>
+
+            <div class="logistics-grid">
+                <div class="info-card">
+                    <h3>Driving Directions</h3>
+                    
+                    <div class="route-segment">
+                        <h4>From Chicagoland</h4>
+                        <ol>
+                            <li>Take <strong>I-90 West</strong> to the <strong>US Route 23</strong> exit.</li>
+                            <li>Go <strong>North (Right)</strong> to US Route 14 in Harvard.</li>
+                            <li>Go <strong>North (Left)</strong> for 1 mile to IL Route 173.</li>
+                        </ol>
+                    </div>
+
+                    <div class="route-segment">
+                        <h4>From Harvard to the Farm</h4>
+                        <ol>
+                            <li>Take <strong>Route 173 West</strong> for 3 miles through Chemung to <strong>White Oaks Road</strong>.</li>
+                            <li><strong>Turn Right</strong> and go 1/2 mile to <strong>Hunter Road</strong>.</li>
+                            <li><strong>Turn Left</strong> and go 1 mile to <strong>Ryan Road</strong>.</li>
+                            <li><strong>Turn Right</strong> and go 1 mile to the end of the road.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <h3>What to Bring & Expect</h3>
+                    
+                    <ul class="prep-list">
+                        <li>
+                            <strong>Tools Provided:</strong> 
+                            We supply saws and twine at no charge. No need to bring your own equipment.
+                        </li>
+                        <li>
+                            <strong>Field Transport:</strong> 
+                            Enjoy free wagon rides out into our fields to find your perfect tree. 
+                            We will happily bring your tree back from the field on the wagon and can provide help tying it onto your car.
+                        </li>
+                        <li>
+                            <strong>Attire:</strong> 
+                            Dress for the weather. A sturdy pair of shoes or boots is highly recommended for walking the fields.
+                        </li>
+                        <li>
+                            <strong>Payment Methods:</strong> 
+                            We gladly accept cash, checks, or credit cards (a small fee applies for card processing). 
+                            There is a surcharge-free ATM on site for your convenience.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+</Layout>
+
+<style>
+    /* GLOBAL BACKGROUND STYLES */
+    .background-overlay {
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        z-index: -1;
+        background-color: var(--pine-dark);
+    }
+    
+    .bg-image {
+        width: 100%; height: 100%; object-fit: cover;
+        opacity: 0.3;
+    }
+
+    .content-container {
+        display: flex;
+        justify-content: center;
+        padding: 120px 20px 60px;
+    }
+
+    .glass-box {
+        max-width: 1000px;
+        width: 100%;
+        background: rgba(26, 46, 26, 0.85);
+        backdrop-filter: blur(10px);
+        padding: 3rem;
+        border-radius: 8px;
+        border: 1px solid var(--pine-accent);
+        color: var(--cream);
+    }
+
+    h1 {
+        border-bottom: 2px solid var(--pine-accent);
+        padding-bottom: 10px;
+        font-family: Georgia, serif;
+        margin-bottom: 2rem;
+    }
+
+    /* ADDRESS BLOCK */
+    .address-block {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 6px;
+    }
+
+    .address-block h2 {
+        margin-bottom: 0.5rem;
+        font-family: Georgia, serif;
+    }
+
+    .address {
+        font-size: 1.25rem;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+        line-height: 1.4;
+    }
+
+    .address-note {
+        font-style: italic;
+        color: #a3cea0;
+        margin-top: 0.5rem;
+    }
+
+    /* GRID LAYOUT */
+    .logistics-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2.5rem;
+    }
+
+    .info-card {
+        background: rgba(0, 0, 0, 0.2);
+        padding: 2rem;
+        border-radius: 6px;
+        border-top: 3px solid var(--pine-accent);
+    }
+
+    .info-card h3 {
+        font-family: Georgia, serif;
+        font-size: 1.4rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 0.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* TYPOGRAPHY & LISTS */
+    .route-segment {
+        margin-bottom: 1.5rem;
+    }
+
+    .route-segment h4 {
+        color: #a3cea0;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+    }
+
+    ol {
+        padding-left: 1.25rem;
+        line-height: 1.6;
+    }
+
+    ol li {
+        margin-bottom: 0.5rem;
+    }
+
+    .prep-list {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .prep-list li {
+        margin-bottom: 1.25rem;
+        line-height: 1.5;
+        padding-left: 1.5rem;
+        position: relative;
+    }
+
+    .prep-list li::before {
+        content: "•";
+        color: var(--pine-accent);
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+        font-size: 1.2rem;
+    }
+
+    strong {
+        color: white;
+    }
+</style>
