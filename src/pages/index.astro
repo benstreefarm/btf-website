@@ -8,7 +8,7 @@ import Navigation from "../components/Navigation.astro";
 
     <div class="split-hero-container">
         
-      <div class="hero-image-side">
+        <div class="hero-image-side">
             <video 
                 autoplay 
                 muted 
@@ -21,7 +21,7 @@ import Navigation from "../components/Navigation.astro";
                 <img src="/DJI_0850sm.jpg" alt="Ben's Christmas Tree Farm drone shot" class="split-bg" />
             </video>
             
-            <div class="image-overlay-text">
+            <div class="image-overlay-text mobile-hide">
                 <h2>Ben's Christmas Tree Farm</h2>
                 <p>Certified Naturally Grown Fraser Firs. Opening the day after Thanksgiving.</p>
             </div>
@@ -31,7 +31,7 @@ import Navigation from "../components/Navigation.astro";
             <div class="dash-scroll-wrapper">
                 
                 <header class="dash-header">
-                    <h1>Ben's Christmas Tree Farm</h1>
+                    <h1 class="desktop-hide">Ben's Christmas Tree Farm</h1>
                     <p class="status-tag">Opening November 27, 2026</p>
                 </header>
 
@@ -98,6 +98,7 @@ import Navigation from "../components/Navigation.astro";
         </div>
     </div>
 </Layout>
+
 <style>
     /* RESET BODY FOR FULL-SCREEN DESIGN */
     :global(body) {
@@ -110,10 +111,12 @@ import Navigation from "../components/Navigation.astro";
     /* SPLIT SYSTEM MATRIX */
     .split-hero-container {
         display: grid;
-        grid-template-columns: 1fr; /* Stacks completely into a single feed on phone screens */
-        min-height: 100vh;
+        grid-template-columns: 1fr;
+        /* FIXED: Accounts for navbar height cleanly, zero gap */
+        min-height: calc(100vh - 80px);
         width: 100vw;
-        padding-top: 80px; /* Leaves clean room for your sticky Navigation component */
+        padding-top: 0; 
+        margin-top: 0;
         box-sizing: border-box;
     }
 
@@ -123,6 +126,7 @@ import Navigation from "../components/Navigation.astro";
         width: 100%;
         height: 40vh; /* Takes up a compact top window on mobile viewports */
         overflow: hidden;
+        margin-top: 0; /* FIXED */
     }
 
     .split-bg {
@@ -146,6 +150,7 @@ import Navigation from "../components/Navigation.astro";
         backdrop-filter: blur(8px);
         color: #f4efe6;
         border-top: 1px solid rgba(255, 255, 255, 0.05);
+        margin-top: 0; /* FIXED */
     }
 
     .dash-scroll-wrapper {
@@ -153,6 +158,7 @@ import Navigation from "../components/Navigation.astro";
     }
 
     .dash-header { margin-bottom: 1.5rem; }
+    /* FIXED: Prevent heading top-margin from pushing the container down */
     .dash-header h1 { font-family: Georgia, serif; font-size: 2rem; margin: 0; color: #ffffff; }
     .status-tag { color: #a3cea0; font-weight: bold; font-size: 1.05rem; margin-top: 0.25rem; }
 
@@ -194,12 +200,32 @@ import Navigation from "../components/Navigation.astro";
     .m-grid .e { background: #f8fafc; }
     .santa-footer { font-size: 0.85rem; font-style: italic; opacity: 0.8; margin-top: 0.75rem; color: #fecaca; }
 
+    /* RESPONSIVE VISIBILITY SWITCHES */
+    .mobile-hide {
+        display: none !important;
+    }
+    
+    .desktop-hide {
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
     /* HARDWARE BREAKPOINT: Activates split-pane on standard monitors */
     @media (min-width: 950px) {
         .split-hero-container {
-            grid-template-columns: 45vw 55vw; /* Fixed viewport horizontal allocation */
-            height: 100vh;
+            grid-template-columns: 45vw 55vw;
+            /* FIXED: Locks layout below navbar height bounds cleanly on desktop */
+            height: calc(100vh - 80px);
+            min-height: calc(100vh - 80px);
             overflow: hidden;
+        }
+
+        .mobile-hide {
+            display: block !important;
+        }
+
+        .desktop-hide {
+            display: none !important;
         }
 
         .hero-image-side {
