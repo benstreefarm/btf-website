@@ -99,4 +99,18 @@
         letter-spacing: 0px;
     }
 }
+
+/* THE FLUID BRAND TITLE ENGINE */
+.nav-brand-title, nav h1 {
+    /* clamp(MIN, PREFERRED, MAX)
+       - Min: Never shrinks smaller than 1.4rem (perfectly readable on an iPhone SE)
+       - Preferred: Scales dynamically at 5% of the total viewport width
+       - Max: Cap it at 2.2rem so it doesn't get oversized on a 4K desktop monitor
+    */
+    font-size: clamp(1.4rem, 5vw, 2.2rem) !important;
+    white-space: nowrap; /* Rigid rule: Absolutely forbids the text from splitting into two lines */
+    letter-spacing: -0.5px; /* Slightly tightens letter tracking on mobile for a premium editorial look */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Fallback: If a tiny screen somehow runs out of pixels, it softens the edge gracefully */
+}
 </style>

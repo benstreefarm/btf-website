@@ -255,4 +255,12 @@ import Navigation from "../components/Navigation.astro";
             gap: 1.5rem;
         }
     }
+
+    /* Keep the main mobile dashboard header text visible and fluid */
+    .desktop-hide {
+        display: block;
+        font-size: clamp(1.4rem, 5.5vw, 2rem) !important; /* Dynamically scales the home card title */
+        white-space: nowrap;
+        margin-bottom: 0.5rem;
+    }
 </style>
