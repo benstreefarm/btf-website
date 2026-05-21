@@ -6,193 +6,227 @@ import Navigation from "../components/Navigation.astro";
 <Layout title="Ben's Christmas Tree Farm | Cut Your Own | Harvard, IL">
     <Navigation />
 
-    <div class="background-overlay">
-        <img src="/DJI_0850sm.jpg" alt="Ben's Christmas Tree Farm rows" class="bg-image" />
-    </div>
+    <div class="split-hero-container">
+        
+      <div class="hero-image-side">
+            <video 
+                autoplay 
+                muted 
+                loop 
+                playsinline 
+                poster="/DJI_0850sm.jpg" 
+                class="split-bg"
+            >
+                <source src="/nw_field_elevator.mp4" type="video/mp4" />
+                <img src="/DJI_0850sm.jpg" alt="Ben's Christmas Tree Farm drone shot" class="split-bg" />
+            </video>
+            
+            <div class="image-overlay-text">
+                <h2>Ben's Christmas Tree Farm</h2>
+                <p>Certified Naturally Grown Fraser Firs. Opening the day after Thanksgiving.</p>
+            </div>
+        </div>
 
-    <main class="content-container">
-        <div class="glass-box wide-dashboard">
-            <header class="home-header">
-                <h1>Ben's Christmas Tree Farm</h1>
-                <p class="tagline">Certified Naturally Grown Fraser Firs & More • Opening November 27, 2026</p>
-            </header>
+        <div class="hero-dash-side">
+            <div class="dash-scroll-wrapper">
+                
+                <header class="dash-header">
+                    <h1>Ben's Christmas Tree Farm</h1>
+                    <p class="status-tag">Opening November 27, 2026</p>
+                </header>
 
-            <div class="dashboard-grid">
-                <div class="dash-left">
-                    <section class="announcement-card">
-                        <h3>2026 Season Update</h3>
-                        <p>
-                            Welcome to the new digital home of Ben's Farm! We are hard at work preparing our 
-                            100 acres of fields for the upcoming harvest. Our fields and trees are <strong>100% herbicide 
-                            and pesticide-free</strong>!
-                        </p>
-                        <p>
-                            We provide the saws, the twine, and the free wagon rides into the fields. You just 
-                            bring the family and dress for the weather!
-                        </p>
-                    </section>
+                <section class="dash-section">
+                    <h3>2026 Season Announcement</h3>
+                    <p>
+                        We are hard at work preparing our fields for the upcoming harvest! All of our trees,
+                        including over 10,000 Fraser Firs, are 
+                        <strong>100% herbicide and pesticide-free</strong>. We provide the saws, the twine, 
+                        and free wagon rides into the fields—you just bring the family and dress for the weather.
+                    </p>
+                </section>
 
-                    <section class="quick-pricing-card">
-                        <h3>Harvest Pricing</h3>
-                        <ul class="price-spec-list">
-                            <li><strong>Pines:</strong> Starting at $52 <span class="detail">($8/ft, 6.5' min)</span></li>
-                            <li><strong>Firs & Spruces:</strong> Starting at $98 <span class="detail">($15/ft, 6.5' min)</span></li>
-                        </ul>
-                        <p class="payment-note">We accept cash, checks, and credit cards</p>
-                        
-                        <div class="action-row">
-                            <a href="/visit" class="btn primary-btn">Get Driving Directions</a>
-                            <a href="/trees" class="btn secondary-btn">View All 8 Varieties</a>
-                        </div>
-                    </section>
-                </div>
+                <section class="dash-section pricing-node">
+                    <h3>Harvest Pricing</h3>
+                    <ul class="bullet-prices">
+                        <li><strong>Pines:</strong> Starting at $52 <span class="spec">($8/ft, 6.5' min)</span></li>
+                        <li><strong>Firs & Spruces:</strong> Starting at $98 <span class="spec">($15/ft, 6.5' min)</span></li>
+                    </ul>
+                    <p class="meta-text">We accept cash, checks, and credit cards.</p>
+                    
+                    <div class="cta-button-row">
+                        <a href="/visit" class="btn-link primary">Directions & Map</a>
+                        <a href="/trees" class="btn-link secondary">All 8 Varieties</a>
+                    </div>
+                </section>
 
-                <div class="dash-right">
-                    <div class="compact-calendar-container">
-                        <h3>2026 Operating Calendar</h3>
-                        
-                        <div class="calendar-legend">
-                            <div><span class="legend-dot green"></span> 9:00 AM - 4:30 PM</div>
-                            <div><span class="legend-dot blue"></span> 10:00 AM - 4:30 PM</div>
-                        </div>
+                <section class="dash-section calendar-node">
+                    <h3>2026 Operating Calendar</h3>
+                    <div class="mini-legend">
+                        <div><span class="dot green"></span> 9:00 AM - 4:30 PM</div>
+                        <div><span class="dot blue"></span> 10:00 AM - 4:30 PM</div>
+                    </div>
 
-                        <div class="mini-month">
-                            <div class="mini-month-title">November 2026</div>
-                            <div class="mini-grid">
-                                <div class="lbl">Su</div><div class="lbl">Mo</div><div class="lbl">Tu</div><div class="lbl">We</div><div class="lbl">Th</div><div class="lbl">Fr</div><div class="lbl">Sa</div>
+                    <div class="mini-months-row">
+                        <div class="m-box">
+                            <div class="m-title">November 2026</div>
+                            <div class="m-grid">
+                                <div class="l">Su</div><div class="l">Mo</div><div class="l">Tu</div><div class="l">We</div><div class="l">Th</div><div class="l">Fr</div><div class="l">Sa</div>
                                 <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div>
                                 <div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div>
                                 <div>15</div><div>16</div><div>17</div><div>18</div><div>19</div><div>20</div><div>21</div>
                                 <div>22</div><div>23</div><div>24</div><div>25</div><div>26</div>
-                                <div class="g-day">27</div><div class="g-day">28</div><div class="b-day">29</div><div>30</div>
+                                <div class="g">27</div><div class="g">28</div><div class="b">29</div><div>30</div>
                             </div>
                         </div>
 
-                        <div class="mini-month">
-                            <div class="mini-month-title">December 2026</div>
-                            <div class="mini-grid">
-                                <div class="lbl">Su</div><div class="lbl">Mo</div><div class="lbl">Tu</div><div class="lbl">We</div><div class="lbl">Th</div><div class="lbl">Fr</div><div class="lbl">Sa</div>
-                                <div class="empty-slot"></div><div class="empty-slot"></div><div>1</div><div>2</div><div>3</div><div>4</div><div class="g-day">5</div>
-                                <div class="b-day">6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div class="g-day">12</div>
-                                <div class="b-day">13</div><div>14</div><div>15</div><div>16</div><div>17</div><div>18</div><div class="g-day">19</div>
-                                <div class="b-day">20</div><div>21</div><div>22</div><div>23</div><div>24</div><div>25</div><div>26</div>
+                        <div class="m-box">
+                            <div class="m-title">December 2026</div>
+                            <div class="m-grid">
+                                <div class="l">Su</div><div class="l">Mo</div><div class="l">Tu</div><div class="l">We</div><div class="l">Th</div><div class="l">Fr</div><div class="l">Sa</div>
+                                <div class="e"></div><div class="e"></div><div>1</div><div>2</div><div>3</div><div>4</div><div class="g">5</div>
+                                <div class="b">6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div class="g">12</div>
+                                <div class="b">13</div><div>14</div><div>15</div><div>16</div><div>17</div><div>18</div><div class="g">19</div>
+                                <div class="b">20</div><div>21</div><div>22</div><div>23</div><div>24</div><div>25</div><div>26</div>
                                 <div>27</div><div>28</div><div>29</div><div>30</div><div>31</div>
                             </div>
                         </div>
-                        <p class="santa-alert">🎅 Santa and horse-drawn wagon rides are typically available Saturdays & Sundays from 10 AM to 3 PM.</p>
                     </div>
-                </div>
+                    <p class="santa-footer">Santa and horse-drawn wagon rides typically available from 10 AM to 3 PM.</p>
+                </section>
+
             </div>
         </div>
-    </main>
+    </div>
 </Layout>
 <style>
-    /* UTILITY LAYOUT CONFIGS */
-    .background-overlay {
-        position: fixed;
-        top: 0; left: 0; width: 100%; height: 100%;
-        z-index: -1;
+    /* RESET BODY FOR FULL-SCREEN DESIGN */
+    :global(body) {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
         background-color: #0d1a0d;
     }
-    .bg-image { width: 100%; height: 100%; object-fit: cover; opacity: 0.25; }
 
-    .content-container {
-        display: flex;
-        justify-content: center;
-        padding: 120px 20px 60px;
-    }
-
-    .wide-dashboard {
-        max-width: 1100px;
-        width: 100%;
-        background: rgba(20, 35, 20, 0.88);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 2.5rem;
-        border-radius: 12px;
-        color: #f4efe6;
-    }
-
-    .home-header {
-        border-bottom: 2px solid #109661;
-        padding-bottom: 1rem;
-        margin-bottom: 2.5rem;
-    }
-    .home-header h1 { font-family: Georgia, serif; font-size: 2.5rem; margin: 0; }
-    .tagline { font-size: 1.1rem; color: #a3cea0; margin-top: 0.5rem; font-weight: 500; }
-
-    /* DASHBOARD DISTRIBUTION ENGINE */
-    .dashboard-grid {
+    /* SPLIT SYSTEM MATRIX */
+    .split-hero-container {
         display: grid;
-        grid-template-columns: 1fr; /* Stack panels on phone resolutions */
-        gap: 3rem;
+        grid-template-columns: 1fr; /* Stacks completely into a single feed on phone screens */
+        min-height: 100vh;
+        width: 100vw;
+        padding-top: 80px; /* Leaves clean room for your sticky Navigation component */
+        box-sizing: border-box;
     }
 
-    .dash-left {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
+    /* LEFT SIDE CONFIGS */
+    .hero-image-side {
+        position: relative;
+        width: 100%;
+        height: 40vh; /* Takes up a compact top window on mobile viewports */
+        overflow: hidden;
     }
 
-    /* TYPOGRAPHIC CARDS */
-    .announcement-card h3, .quick-pricing-card h3, .compact-calendar-container h3 {
-        font-family: Georgia, serif;
-        font-size: 1.4rem;
-        color: #ffffff;
-        margin-bottom: 1rem;
+    .split-bg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
-    .announcement-card p { line-height: 1.6; font-size: 1.05rem; opacity: 0.9; }
-
-    .price-spec-list { list-style: none; padding: 0; margin: 1rem 0; }
-    .price-spec-list li {
-        font-size: 1.2rem;
-        padding: 0.5rem 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    .image-overlay-text {
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        padding: 2rem 1.5rem;
+        background: linear-gradient(transparent, rgba(13, 26, 13, 0.95));
     }
-    .price-spec-list .detail { font-size: 0.95rem; color: #a3cea0; margin-left: 0.5rem; }
-    .payment-note { font-size: 0.9rem; opacity: 0.75; font-style: italic; }
+    .image-overlay-text h2 { font-family: Georgia, serif; font-size: 1.8rem; color: #fff; margin: 0; }
+    .image-overlay-text p { font-size: 1rem; color: #a3cea0; margin: 0.5rem 0 0; }
+
+    /* RIGHT SIDE CONFIGS (THE BLURRED DASHBOARD) */
+    .hero-dash-side {
+        background: rgba(20, 32, 20, 0.92);
+        backdrop-filter: blur(8px);
+        color: #f4efe6;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .dash-scroll-wrapper {
+        padding: 2rem 1.5rem;
+    }
+
+    .dash-header { margin-bottom: 1.5rem; }
+    .dash-header h1 { font-family: Georgia, serif; font-size: 2rem; margin: 0; color: #ffffff; }
+    .status-tag { color: #a3cea0; font-weight: bold; font-size: 1.05rem; margin-top: 0.25rem; }
+
+    .dash-section { margin-bottom: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 1.25rem; }
+    .dash-section h3 { font-family: Georgia, serif; font-size: 1.25rem; color: #fff; margin: 0 0 0.75rem; }
+    .dash-section p { line-height: 1.5; font-size: 0.95rem; opacity: 0.9; margin: 0 0 0.5rem; }
+
+    /* PRICING ELEMENTS */
+    .bullet-prices { list-style: none; padding: 0; margin: 0 0 1rem; }
+    .bullet-prices li { font-size: 1.1rem; padding: 0.4rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.03); }
+    .bullet-prices .spec { font-size: 0.9rem; color: #a3cea0; margin-left: 0.5rem; }
+    .meta-text { font-size: 0.85rem; opacity: 0.7; font-style: italic; }
 
     /* CTAs */
-    .action-row { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem; }
-    .btn {
-        text-decoration: none;
-        font-weight: bold;
-        padding: 0.8rem 1.5rem;
-        border-radius: 4px;
-        text-align: center;
+    .cta-button-row { display: flex; gap: 1rem; margin-top: 1.25rem; }
+    .btn-link {
+        text-decoration: none; font-weight: bold; font-size: 0.95rem;
+        padding: 0.7rem 1.2rem; border-radius: 4px; text-align: center; flex: 1;
         transition: all 0.2s ease;
     }
-    .primary-btn { background: #109661; color: white; }
-    .primary-btn:hover { background: #15b374; }
-    .secondary-btn { border: 1px solid rgba(255, 255, 255, 0.2); color: #f4efe6; }
-    .secondary-btn:hover { background: rgba(255, 255, 255, 0.05); }
+    .btn-link.primary { background: #109661; color: white; }
+    .btn-link.primary:hover { background: #15b374; }
+    .btn-link.secondary { border: 1px solid rgba(255, 255, 255, 0.15); color: #f4efe6; }
+    .btn-link.secondary:hover { background: rgba(255, 255, 255, 0.03); }
 
-    /* COMPACT CALENDAR NODE */
-    .compact-calendar-container {
-        background: rgba(0, 0, 0, 0.2);
-        padding: 1.5rem;
-        border-radius: 8px;
-        border: 1px solid rgba(255, 255, 255, 0.05);
-    }
+    /* COMPACT GRID CONFIGS */
+    .mini-legend { display: flex; gap: 1.25rem; margin-bottom: 1rem; font-size: 0.85rem; }
+    .dot { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 4px; vertical-align: middle; }
+    .dot.green, .g { background: #109661 !important; color: white; font-weight: bold; }
+    .dot.blue, .b { background: #6a6aff !important; color: white; font-weight: bold; }
 
-    .calendar-legend { display: flex; gap: 1.5rem; margin-bottom: 1.5rem; font-size: 0.9rem; }
-    .legend-dot { display: inline-block; width: 12px; height: 12px; border-radius: 2px; vertical-align: middle; margin-right: 4px; }
-    .legend-dot.green, .g-day { background: #109661 !important; color: white; font-weight: bold; }
-    .legend-dot.blue, .b-day { background: #6a6aff !important; color: white; font-weight: bold; }
-
-    .mini-month { margin-bottom: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 4px; overflow: hidden; }
-    .mini-month-title { background: #8b3a2b; text-align: center; font-weight: bold; padding: 0.4rem; font-size: 0.95rem; }
+    .mini-months-row { display: flex; flex-direction: column; gap: 1.25rem; }
+    .m-box { border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 4px; overflow: hidden; width: 100%; }
+    .m-title { background: #8b3a2b; text-align: center; font-weight: bold; padding: 0.3rem; font-size: 0.9rem; color: #fff; }
     
-    .mini-grid { display: grid; grid-template-columns: repeat(7, 1fr); background: white; color: #222; text-align: center; font-size: 0.85rem; }
-    .mini-grid div { padding: 0.4rem 0; border-bottom: 1px solid #f0f0f0; border-right: 1px solid #f0f0f0; }
-    .mini-grid .lbl { background: #f1f5f9; color: #64748b; font-weight: bold; font-size: 0.75rem; }
-    .mini-grid .empty-slot { background: #f8fafc; }
-    
-    .santa-alert { font-size: 0.9rem; font-style: italic; opacity: 0.85; margin-top: 0.5rem; color: #fecaca; }
+    .m-grid { display: grid; grid-template-columns: repeat(7, 1fr); background: white; color: #222; text-align: center; font-size: 0.8rem; }
+    .m-grid div { padding: 0.35rem 0; border-bottom: 1px solid #f0f0f0; border-right: 1px solid #f0f0f0; }
+    .m-grid .l { background: #f1f5f9; color: #64748b; font-weight: bold; font-size: 0.7rem; }
+    .m-grid .e { background: #f8fafc; }
+    .santa-footer { font-size: 0.85rem; font-style: italic; opacity: 0.8; margin-top: 0.75rem; color: #fecaca; }
 
-    /* RESPONSIBILITY CUT OVER */
-    @media (min-width: 850px) {
-        .dashboard-grid { grid-template-columns: 1.2fr 0.8fr; gap: 4rem; }
+    /* HARDWARE BREAKPOINT: Activates split-pane on standard monitors */
+    @media (min-width: 950px) {
+        .split-hero-container {
+            grid-template-columns: 45vw 55vw; /* Fixed viewport horizontal allocation */
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .hero-image-side {
+            height: 100%; /* Spans full height of screen */
+        }
+
+        .image-overlay-text {
+            padding: 3rem;
+            background: linear-gradient(transparent, rgba(13, 26, 13, 0.6));
+        }
+        .image-overlay-text h2 { font-size: 2.5rem; }
+        .image-overlay-text p { font-size: 1.2rem; }
+
+        .hero-dash-side {
+            height: 100%;
+            overflow-y: auto; /* Adds a clean independent scroll bar to the text dashboard side only */
+            border-top: none;
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .dash-scroll-wrapper {
+            padding: 3rem;
+        }
+
+        .mini-months-row {
+            flex-direction: row; /* Puts November and December side-by-side on desktop */
+            gap: 1.5rem;
+        }
     }
 </style>
