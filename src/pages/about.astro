@@ -149,16 +149,59 @@ import Navigation from "../components/Navigation.astro";
     .scrapbook-section h3 { font-family: Georgia, serif; font-size: 1.6rem; margin-bottom: 0.5rem; }
     .scrapbook-intro { font-size: 1rem; opacity: 0.8; margin-bottom: 2.5rem; font-style: italic; }
 
+    /* REFACTORED SCRAPBOOK ALBUM GRID */
     .scrapbook-grid {
-        display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center; /* Vertically centers the elements along a central horizon line */
+        gap: 2.5rem;
+        margin-top: 2rem;
     }
-    
-    /* Playful misalignments for the collage pile view */
-    .item-1 { transform: rotate(-2deg); }
-    .item-2 { transform: rotate(3deg); margin-top: 0.5rem; }
-    .item-3 { transform: rotate(-1.5deg); }
-    .item-4 { transform: rotate(2deg); margin-top: -0.25rem; }
 
+    /* UNIFORM POLAROID STRUCTURE */
+    .scrapbook-item.frame-cozy {
+        background: #ffffff;
+        /* Giving the frames a strict uniform width keeps the grid rhythm clean */
+        width: 220px; 
+        padding: 0.75rem 0.75rem 2.25rem; /* Extends the bottom border for the caption string */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.15);
+        border-radius: 2px;
+        box-sizing: border-box;
+        transition: transform 0.3s ease-in-out, z-index 0s;
+    }
+    /* THE CROPPING CORE: Forces both landscape and portrait files to conform beautifully */
+    .scrapbook-item.frame-cozy img {
+        width: 100%;
+        height: 200px; /* Locks the image box to a perfect square aspect ratio inside the frame */
+        object-fit: cover; /* Crops and centers the photos automatically so they never look stretched or squished */
+        display: block;
+        border: 1px solid #f0f0f0;
+    }
+    .scrapbook-caption {
+        font-family: "Permanent Marker", "Courier New", cursive, serif;
+        color: #2b3e2b;
+        text-align: center;
+        font-size: 0.9rem;
+        font-weight: bold;
+        display: block;
+        margin-top: 0.75rem;
+        line-height: 1.2;
+        white-space: normal; /* Allows longer text like "Ben with grandson Ben" to wrap cleanly */
+    }
+
+    /* PERSISTENT ASYMMETRIC ROTATIONS (Maintains that organic analog look) */
+    .item-1 { transform: rotate(-3deg); }
+    .item-2 { transform: rotate(2.5deg); }
+    .item-3 { transform: rotate(-2deg); }
+    .item-4 { transform: rotate(4deg); }
+
+    /* Interactive lift effect when a family friend hovers over a photo */
+    .scrapbook-item.frame-cozy:hover {
+        transform: rotate(0deg) scale(1.06);
+        z-index: 10;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+    }
     /* DESKTOP MEDIA QUERIES: Engages dual columns when monitor space expands */
     @media (min-width: 768px) {
         .story-row { grid-template-columns: 1.2fr 0.8fr; gap: 3.5rem; }
