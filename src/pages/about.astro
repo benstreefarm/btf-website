@@ -1,74 +1,168 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
 ---
 
-<Layout title="About Us">
-  <Navigation />
-  
-  <div class="background-overlay">
-    <img src="/DJI_0850sm.jpg" alt="Ben's Christmas Tree Farm aerial view" class="bg-image" />
-  </div>
+<Layout title="Our Story & Legacy | Ben's Christmas Tree Farm">
+    <Navigation />
 
-  <main class="content-container">
-    <div class="glass-box">
-      <h1>Our Story</h1>
-      <p>
-        At Ben's, it's all about the trees. Starting with the finest quality seedlings, 
-        Ben has been growing and nurturing 100% hand-pruned firs and pines since 1982. 
-        We have thousands of trees in 8 varieties of firs and pines, from 6 to 15 feet tall. 
-        We use organic farming practices, and all trees are pesticide-free.
-      </p>
+    <div class="background-overlay">
+        <img src="/DJI_0850sm.jpg" alt="Ben's Christmas Tree Farm landscape" class="bg-image" />
     </div>
-  </main>
+
+    <main class="content-container">
+        <div class="glass-box legacy-dashboard">
+            
+            <header class="about-header">
+                <h1>The Story Behind the Farm</h1>
+                <p class="subtitle">Growing traditions and family memories for over 40 years</p>
+            </header>
+
+            <section class="story-row">
+                <div class="text-block">
+                    <h2>How It All Began</h2>
+                    <p>
+                        Ben's Christmas Tree Farm didn't start overnight; it grew out of a deep love for the 
+                        land and a vision of creating a place where families could escape the rush of the suburbs 
+                        to harvest a true holiday centerpiece. What began as a passionate conservation project 
+                        slowly transformed row by row, tree by tree, into a sprawling 100-acre haven in McHenry County.
+                    </p>
+                    <p>
+                        From the very first planting cycles, Ben committed the farm to an organic, pesticide-free, 
+                        and herbicide-free approach. He firmly believed that a family tradition should be grown naturally, 
+                        ensuring that kids and dogs could run safely through the rows without a trace of harsh chemicals.
+                    </p>
+                </div>
+                <div class="image-block frame-cozy rotate-right">
+                    <img src="/ben_cbk.jpg" alt="Ben with son and grandkids" />
+                    <p class="caption">Three generations of Christmas Tree farmers</p>
+                </div>
+            </section>
+
+            <section class="story-row reverse">
+                <div class="image-block frame-cozy rotate-left">
+                    <img src="/ben_cj.jpg" alt="Ben with sons" />
+                    <p class="caption">Ben with sons Chris and Justin</p>
+                </div>
+                <div class="text-block">
+                    <h2>A Multi-Generational Legacy</h2>
+                    <p>
+                        Today, the legacy that Ben built continues to flourish. The farm has grown far beyond a weekend 
+                        hobby into a living, breathing multi-generational operation. Walking down the rows of over 10,000 
+                        Fraser Firs, you are just as likely to spot his children driving the tractor or his grandkids 
+                        helping families bundle up their freshly cut trees.
+                    </p>
+                    <p>
+                        Every horse-drawn wagon ride, every free saw handed out, and every warm smile at the checkout gate 
+                        is an intentional extension of the hospitality Ben established from day one. We don't just grow 
+                        trees here—we cultivate annual milestones.
+                    </p>
+                </div>
+            </section>
+
+            <hr class="divider" />
+
+            <section class="scrapbook-section">
+                <h3>Memories Scattered Through the Rows</h3>
+                <p class="scrapbook-intro">A glimpse into life on the farm across generations, from grandfathers to grandkids.</p>
+                
+                <div class="scrapbook-grid">
+                    <div class="scrapbook-item frame-cozy item-1">
+                        <img src="/ben_and_ben.jpg" alt="Ben smiling with his grandson" />
+                        <span class="scrapbook-caption">Ben with grandson Ben</span>
+                    </div>
+                    <div class="scrapbook-item frame-cozy item-2">
+                        <img src="/ben_and_kbaby.jpg" alt="Ben with baby granddaughter" />
+                        <span class="scrapbook-caption">Ben with his granddaughter</span>
+                    </div>
+                    <div class="scrapbook-item frame-cozy item-3">
+                        <img src="/ben_sis.jpg" alt="Ben with his sister" />
+                        <span class="scrapbook-caption">Ben with his sister</span>
+                    </div>
+                    <div class="scrapbook-item frame-cozy item-4">
+                        <img src="/ben_and_k.jpg" alt="Ben with his granddaughter" />
+                        <span class="scrapbook-caption">Ben with his granddaughter</span>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
 </Layout>
 
 <style>
-  .background-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-color: var(--pine-dark); /* Fills in while image loads */
-  }
+    /* UTILITY CONTAINER CONTROLS */
+    .background-overlay {
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+        background-color: #0d1a0d;
+    }
+    .bg-image { width: 100%; height: 100%; object-fit: cover; opacity: 0.15; }
 
-  .bg-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.35; /* Keeps it subtle so text remains the focus */
-    filter: saturate(0.8); /* Slightly desaturates to look more "classic" */
-  }
+    .content-container {
+        display: flex; justify-content: center;
+        padding: 120px 20px 60px;
+    }
 
-  .content-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 120px 20px 60px;
-  }
+    .legacy-dashboard {
+        max-width: 950px; width: 100%;
+        background: rgba(20, 32, 20, 0.9);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 3rem; border-radius: 12px; color: #f4efe6;
+    }
 
-  .glass-box {
-    max-width: 800px;
-    background: rgba(26, 46, 26, 0.7); /* Dark green with transparency */
-    backdrop-filter: blur(8px);       /* Blurs the farm image behind the box */
-    padding: 3rem;
-    border-radius: 8px;
-    border: 1px solid var(--pine-accent);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  }
+    .about-header { border-bottom: 2px solid #109661; padding-bottom: 1.5rem; margin-bottom: 3rem; text-align: center; }
+    .about-header h1 { font-family: Georgia, serif; font-size: 2.5rem; margin: 0; color: #ffffff; }
+    .subtitle { font-style: italic; color: #a3cea0; font-size: 1.1rem; margin-top: 0.5rem; }
 
-  h1 {
-    font-size: 3rem;
-    margin-top: 0;
-    border-bottom: 2px solid var(--pine-accent);
-    padding-bottom: 15px;
-  }
+    /* EDITORIAL TEXT/IMAGE ROW LAYOUT ENGINE */
+    .story-row {
+        display: grid; grid-template-columns: 1fr; /* Stacks completely into a clean book-read layout on mobile */
+        gap: 2.5rem; align-items: center; margin-bottom: 4rem;
+    }
 
-  p {
-    font-size: 1.3rem;
-    line-height: 1.8;
-  }
+    .text-block h2 { font-family: Georgia, serif; font-size: 1.75rem; margin-top: 0; color: #ffffff; }
+    .text-block p { line-height: 1.7; font-size: 1.05rem; opacity: 0.95; margin-bottom: 1.25rem; }
+
+    /* THE HOMEY / COZY SCRAPBOOK PHOTO FRAME */
+    .frame-cozy {
+        background: #ffffff; padding: 0.75rem 0.75rem 2rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.2);
+        border-radius: 2px; transition: transform 0.3s ease-in-out;
+    }
+    .frame-cozy img { width: 100%; height: auto; display: block; object-fit: cover; border-radius: 1px; }
+    .frame-cozy .caption, .frame-cozy .scrapbook-caption {
+        font-family: "Permanent Marker", "Courier New", cursive, serif; /* Gives a handwritten scrapbook feel */
+        color: #2b3e2b; text-align: center; font-size: 0.95rem; margin: 0.75rem 0 0; font-weight: bold;
+    }
+
+    /* Subtle variations in rotation angles to mimic loosely pasted analog photos */
+    .rotate-right { transform: rotate(1.5deg); }
+    .rotate-left { transform: rotate(-1.5deg); }
+    .frame-cozy:hover { transform: rotate(0deg) scale(1.02); }
+
+    .divider { border: 0; height: 1px; background: linear-gradient(to right, transparent, rgba(255,255,255,0.15), transparent); margin: 4rem 0; }
+
+    /* ALBUM SCRAPBOOK GRID (BOTTOM DECK) */
+    .scrapbook-section { text-align: center; }
+    .scrapbook-section h3 { font-family: Georgia, serif; font-size: 1.6rem; margin-bottom: 0.5rem; }
+    .scrapbook-intro { font-size: 1rem; opacity: 0.8; margin-bottom: 2.5rem; font-style: italic; }
+
+    .scrapbook-grid {
+        display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;
+    }
+    
+    /* Playful misalignments for the collage pile view */
+    .item-1 { transform: rotate(-2deg); }
+    .item-2 { transform: rotate(3deg); margin-top: 0.5rem; }
+    .item-3 { transform: rotate(-1.5deg); }
+    .item-4 { transform: rotate(2deg); margin-top: -0.25rem; }
+
+    /* DESKTOP MEDIA QUERIES: Engages dual columns when monitor space expands */
+    @media (min-width: 768px) {
+        .story-row { grid-template-columns: 1.2fr 0.8fr; gap: 3.5rem; }
+        .story-row.reverse { grid-template-columns: 0.8fr 1.2fr; }
+        .scrapbook-grid { grid-template-columns: repeat(4, 1fr); }
+    }
 </style>
