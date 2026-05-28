@@ -18,19 +18,21 @@ import Navigation from "../components/Navigation.astro";
                 <p class="subtitle">Cultivating family memories for over 40 years</p>
             </header>
 
+            <!-- SECTION 1: From Corporate City to Country Air (Text Left, Image Right) -->
             <section class="story-row">
                 <div class="text-block">
-                    <h2>How It All Began</h2>
+                    <h2>From the City to the Open Fields</h2>
                     <p>
-                        Ben's Christmas Tree Farm didn't start overnight; it grew out of a deep love for the 
-                        land and a vision of creating a place where families could escape the rush of the suburbs 
-                        to harvest a true holiday centerpiece. What began as a passionate conservation project 
-                        slowly transformed row by row, tree by tree, into a sprawling 100-acre haven in McHenry County.
+                        Ben was born and raised in Chicago. But the seed for his true 
+                        passion was planted hundreds of miles away as a boy, while he spent summers on his grandmother’s 
+                        farm in Nebraska. It was there that he developed a deep, lifelong appreciation for the land and the simple 
+                        peace of wide-open country air. 
                     </p>
                     <p>
-                        From the very first planting cycles, Ben committed the farm to an organic, pesticide-free, 
-                        and herbicide-free approach. He firmly believed that a family tradition should be grown naturally, 
-                        ensuring that kids and dogs could run safely through the rows without a trace of harsh chemicals.
+                        Years later, after earning his MBA, Ben found himself climbing the ladder in a cushy office job in downtown 
+                        Chicago. The corporate life provided security, but his heart kept wandering back to those childhood summers. 
+                        In search of that fresh country air, he made a leap of faith and purchased a beautiful piece of property in 
+                        Harvard, Illinois in 1982 - initially intending to plant and sell Christmas trees purely as a weekend hobby.
                     </p>
                 </div>
                 <div class="image-block frame-cozy rotate-right">
@@ -39,29 +41,45 @@ import Navigation from "../components/Navigation.astro";
                 </div>
             </section>
 
+            <!-- SECTION 2: Trading the Tie for the Trees (Image Left, Text Right) -->
             <section class="story-row reverse">
                 <div class="image-block frame-cozy rotate-left">
                     <img src="/ben_cj.jpg" alt="Ben with sons" />
                     <p class="caption">Ben with sons Chris and Justin</p>
                 </div>
                 <div class="text-block">
-                    <h2>A Multi-Generational Legacy</h2>
+                    <h2>Growing the Green Way Before It Was Cool</h2>
                     <p>
-                        Today, the legacy that Ben built continues to flourish. The farm has grown far beyond a weekend 
-                        hobby into a living, breathing multi-generational operation. Walking down the rows of over 10,000 
-                        Fraser Firs, you are just as likely to spot his children driving the tractor or his grandkids 
-                        helping families bundle up their freshly cut trees.
+                        Ben quickly realized that a thriving tree farm demanded far more attention than a casual weekend 
+                        hobby would allow. Driven by a desire to pursue his dream full-time, he left his office job behind, permanently 
+                        trading a suit and tie for a tractor and dirt. 
                     </p>
                     <p>
-                        Every horse-drawn wagon ride, every free saw handed out, and every warm smile at the checkout gate 
-                        is an intentional extension of the hospitality Ben established from day one. We don't just grow 
-                        trees here—we cultivate annual milestones.
+                        Long before "organic" and "eco-friendly" became modern buzzwords, Ben was fiercely dedicated to growing 
+                        trees the green way. He refused to expose himself, his children, or his customers to chemicals, instead
+                        pioneering a strict 100% herbicide-free and pesticide-free approach which continues at the farm today.
+                    </p>
+                </div>
+            </section>
+
+            <!-- SECTION 3: Passing the Mantle (Full-width text block) -->
+            <section class="story-row continuation">
+                <div class="text-block full-width">
+                    <h2>Carrying the Torch Forward</h2>
+                    <p>
+                        Though Ben passed away in 2013, his dream and his legacy live on. Today, his sons Chris and Justin have 
+                        proudly taken over management of the farm, alongside a longtime family friend who is pouring his blood, 
+                        sweat, and tears into the farm every single day. 
+                        The legacy that Ben left lives on vibrantly through his sons, the thousands of local families who 
+                        make our fields part of their annual traditions, and his ten beloved grandchildren who will grow up with the 
+                        farm in their blood.  
                     </p>
                 </div>
             </section>
 
             <hr class="divider" />
 
+            <!-- BOTTOM DECK: The Album Collage Grid -->
             <section class="scrapbook-section">
                 <h3>Memories Scattered Through the Rows</h3>
                 <p class="scrapbook-intro">A glimpse into life on the farm across generations, from grandfathers to grandkids.</p>
@@ -125,6 +143,14 @@ import Navigation from "../components/Navigation.astro";
     .text-block h2 { font-family: Georgia, serif; font-size: 1.75rem; margin-top: 0; color: #ffffff; }
     .text-block p { line-height: 1.7; font-size: 1.05rem; opacity: 0.95; margin-bottom: 1.25rem; }
 
+    /* FULL-WIDTH CONTINUATION ELEMENT OPTIMIZATION */
+    .story-row.continuation {
+        grid-template-columns: 1fr !important;
+        margin-bottom: 2rem;
+    }
+    .full-width h2 { font-family: Georgia, serif; font-size: 1.75rem; text-align: center; margin-bottom: 1rem; }
+    .full-width p { text-align: center; max-width: 800px; margin: 0 auto; line-height: 1.7; }
+
     /* THE HOMEY / COZY SCRAPBOOK PHOTO FRAME */
     .frame-cozy {
         background: #ffffff; padding: 0.75rem 0.75rem 2rem;
@@ -154,7 +180,7 @@ import Navigation from "../components/Navigation.astro";
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        align-items: center; /* Vertically centers the elements along a central horizon line */
+        align-items: center; /* Vertically centers elements along a uniform horizon line */
         gap: 2.5rem;
         margin-top: 2rem;
     }
@@ -162,22 +188,23 @@ import Navigation from "../components/Navigation.astro";
     /* UNIFORM POLAROID STRUCTURE */
     .scrapbook-item.frame-cozy {
         background: #ffffff;
-        /* Giving the frames a strict uniform width keeps the grid rhythm clean */
         width: 220px; 
-        padding: 0.75rem 0.75rem 2.25rem; /* Extends the bottom border for the caption string */
+        padding: 0.75rem 0.75rem 2.25rem; /* Extends bottom padding border for handwritten captions */
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.15);
         border-radius: 2px;
         box-sizing: border-box;
         transition: transform 0.3s ease-in-out, z-index 0s;
     }
-    /* THE CROPPING CORE: Forces both landscape and portrait files to conform beautifully */
+
+    /* THE CROPPING CORE: Solves portrait vs landscape sizing issues completely */
     .scrapbook-item.frame-cozy img {
         width: 100%;
-        height: 200px; /* Locks the image box to a perfect square aspect ratio inside the frame */
-        object-fit: cover; /* Crops and centers the photos automatically so they never look stretched or squished */
+        height: 200px; /* Locks the bounding frame to a square profile matrix */
+        object-fit: cover; /* Crops image components seamlessly without stretching */
         display: block;
         border: 1px solid #f0f0f0;
     }
+
     .scrapbook-caption {
         font-family: "Permanent Marker", "Courier New", cursive, serif;
         color: #2b3e2b;
@@ -187,21 +214,22 @@ import Navigation from "../components/Navigation.astro";
         display: block;
         margin-top: 0.75rem;
         line-height: 1.2;
-        white-space: normal; /* Allows longer text like "Ben with grandson Ben" to wrap cleanly */
+        white-space: normal; /* Permits caption strings to wrap naturally below square assets */
     }
 
-    /* PERSISTENT ASYMMETRIC ROTATIONS (Maintains that organic analog look) */
+    /* PERSISTENT ASYMMETRIC ROTATIONS */
     .item-1 { transform: rotate(-3deg); }
     .item-2 { transform: rotate(2.5deg); }
     .item-3 { transform: rotate(-2deg); }
     .item-4 { transform: rotate(4deg); }
 
-    /* Interactive lift effect when a family friend hovers over a photo */
+    /* Interactive hover lift execution */
     .scrapbook-item.frame-cozy:hover {
         transform: rotate(0deg) scale(1.06);
         z-index: 10;
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
     }
+
     /* DESKTOP MEDIA QUERIES: Engages dual columns when monitor space expands */
     @media (min-width: 768px) {
         .story-row { grid-template-columns: 1.2fr 0.8fr; gap: 3.5rem; }
