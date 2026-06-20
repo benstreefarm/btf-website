@@ -6,12 +6,10 @@ import Navigation from "../components/Navigation.astro";
 <Layout title="Contact Us | Ben's Christmas Tree Farm">
     <Navigation />
 
-    <div class="background-overlay">
-        <img src="/DJI_0850sm.jpg" alt="Ben's Christmas Tree Farm background" class="bg-image" />
-    </div>
+
 
     <main class="content-container">
-        <div class="glass-box contact-dashboard">
+        <div class="glass-dashboard">
             
             <header class="contact-header">
                 <h1>Contact the Farm</h1>
@@ -94,25 +92,17 @@ import Navigation from "../components/Navigation.astro";
 </Layout>
 
 <style>
-    /* CONTENT & CORE GEOMETRY */
+/* CONTENT & CORE GEOMETRY */
     .background-overlay {
         position: fixed;
         top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
-        background-color: #0d1a0d;
+        background-color: var(--pine-dark); /* FIXED: Points directly to your unified lighter green canvas */
     }
     .bg-image { width: 100%; height: 100%; object-fit: cover; opacity: 0.15; }
 
     .content-container {
         display: flex; justify-content: center;
         padding: 120px 20px 60px;
-    }
-
-    .contact-dashboard {
-        max-width: 1000px; width: 100%;
-        background: rgba(20, 32, 20, 0.92);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.08);
-        padding: 3rem; border-radius: 12px; color: #f4efe6;
     }
 
     .contact-header { border-bottom: 2px solid #109661; padding-bottom: 1.5rem; margin-bottom: 3rem; }
