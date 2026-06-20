@@ -140,18 +140,20 @@ import Navigation from "../components/Navigation.astro";
         position: absolute;
         bottom: 0; left: 0; right: 0;
         padding: 2rem 1.5rem;
-        background: linear-gradient(transparent, rgba(13, 26, 13, 0.95));
+        background: linear-gradient(transparent, rgba(13, 26, 13, 0.5));
     }
     .image-overlay-text h2 { font-family: Georgia, serif; font-size: 1.8rem; color: #fff; margin: 0; }
     .image-overlay-text p { font-size: 1rem; color: #a3cea0; margin: 0.5rem 0 0; }
 
     /* RIGHT SIDE CONFIGS (THE BLURRED DASHBOARD) */
     .hero-dash-side {
-        background: rgba(20, 32, 20, 0.92);
-        backdrop-filter: blur(8px);
+        /* Swap the hardcoded 0.92 color for your unified design system token */
+        background: var(--glass-surface); 
+        backdrop-filter: blur(12px); 
+
         color: #f4efe6;
         border-top: 1px solid rgba(255, 255, 255, 0.05);
-        margin-top: 0; /* FIXED */
+        margin-top: 0;
     }
 
     .dash-scroll-wrapper {
@@ -237,7 +239,7 @@ import Navigation from "../components/Navigation.astro";
 
         .image-overlay-text {
             padding: 3rem;
-            background: linear-gradient(transparent, rgba(13, 26, 13, 0.6));
+            background: linear-gradient(transparent, rgba(13, 26, 13, 0.2));
         }
         .image-overlay-text h2 { font-size: 2.5rem; }
         .image-overlay-text p { font-size: 1.2rem; }
@@ -249,8 +251,10 @@ import Navigation from "../components/Navigation.astro";
             border-left: 1px solid rgba(255, 255, 255, 0.05);
             
             /* ADD THESE TWO LINES */
-            background: var(--glass-surface); 
-            backdrop-filter: blur(12px); 
+            /*background: var(--glass-surface); 
+            backdrop-filter: blur(12px); */
+            background-color: rgba(14, 26, 14, 0.15) !important; 
+            backdrop-filter: blur(12px) !important;
         }
 
         .dash-scroll-wrapper {
