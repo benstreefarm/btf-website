@@ -32,6 +32,7 @@ import Navigation from "../components/Navigation.astro";
                 
                 <header class="dash-header">
                     <h1 class="desktop-hide">Ben's Christmas Tree Farm</h1>
+                    <h2 class="status-tag">The only Certified Naturally Grown Christmas tree farm in the Midwest!</h2>
                     <p class="status-tag">Opening November 27, 2026</p>
                 </header>
 
@@ -215,8 +216,10 @@ import Navigation from "../components/Navigation.astro";
         .split-hero-container {
             grid-template-columns: 45vw 55vw;
             /* FIXED: Locks layout below navbar height bounds cleanly on desktop */
-            height: calc(100vh - 80px);
+            /* height: calc(100vh - 80px);
             min-height: calc(100vh - 80px);
+            height: calc(100vh - 64px); */
+            min-height: calc(100vh - 64px);
             overflow: hidden;
         }
 
@@ -244,6 +247,10 @@ import Navigation from "../components/Navigation.astro";
             overflow-y: auto; /* Adds a clean independent scroll bar to the text dashboard side only */
             border-top: none;
             border-left: 1px solid rgba(255, 255, 255, 0.05);
+            
+            /* ADD THESE TWO LINES */
+            background: var(--glass-surface); 
+            backdrop-filter: blur(12px); 
         }
 
         .dash-scroll-wrapper {
