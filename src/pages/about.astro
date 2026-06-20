@@ -1,74 +1,271 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
 ---
 
-<Layout title="About Us">
-  <Navigation />
-  
-  <div class="background-overlay">
-    <img src="/DJI_0850sm.jpg" alt="Ben's Christmas Tree Farm aerial view" class="bg-image" />
-  </div>
+<Layout title="Our Story & Legacy | Ben's Christmas Tree Farm">
+    <Navigation />
 
-  <main class="content-container">
-    <div class="glass-box">
-      <h1>Our Story</h1>
-      <p>
-        At Ben's, it's all about the trees. Starting with the finest quality seedlings, 
-        Ben has been growing and nurturing 100% hand-pruned firs and pines since 1982. 
-        We have thousands of trees in 8 varieties of firs and pines, from 6 to 15 feet tall. 
-        We use organic farming practices, and all trees are pesticide-free.
-      </p>
-    </div>
-  </main>
+
+    <main class="content-container">
+        <div class="glass-dashboard">
+            
+            <header class="about-header">
+                <h1>The Story Behind the Farm</h1>
+                <p class="subtitle">Cultivating family memories for over 40 years</p>
+            </header>
+
+            <!-- SECTION 1: Text Left, Image Right on Desktop / Image First on Mobile -->
+            <section class="story-row">
+                <div class="text-block">
+                    <h2>From the City to the Open Fields</h2>
+                    <p>
+                        Ben was born and raised in Chicago. But the seed for his true 
+                        passion was planted hundreds of miles away as a boy, while he spent summers on his grandparents' 
+                        farm in Nebraska. It was there that he developed a deep, lifelong appreciation for the land and the simple 
+                        peace of wide-open country air. 
+                    </p>
+                    <p>
+                        Years later, after earning his MBA, Ben found himself climbing the ladder in a cushy office job in downtown 
+                        Chicago. The corporate life provided security, but his heart kept wandering back to those childhood summers. 
+                        In search of that fresh country air, he made a leap of faith and in 1982 purchased 55 acres of rolling farmland in 
+                        Harvard, Illinois - initially intending to plant and sell Christmas trees purely as a weekend hobby.
+                    </p>
+                </div>
+                <div class="image-block frame-cozy rotate-right">
+                    <img src="/ben_horse.jpg" alt="A young Ben in Nebraska" />
+                    <p class="caption">A young Ben in Nebraska</p>
+                </div>
+            </section>
+
+            <!-- SECTION 2: Image Left, Text Right on Desktop / Image First on Mobile -->
+            <section class="story-row reverse">
+                <div class="image-block frame-cozy rotate-left">
+                    <img src="/ben_cbk.jpg" alt="Ben with son and grandkids" />
+                    <p class="caption">Three generations of Christmas Tree farmers</p>
+                </div>
+                <div class="text-block">
+                    <h2>Growing the Green Way Before It Was Cool</h2>
+                    <p>
+                        Ben quickly realized that a thriving tree farm demanded far more attention than a casual weekend 
+                        hobby would allow. Turning his dreams into reality, Ben left his office job behind, permanently 
+                        trading a suit and tie for a tractor and dirt. 
+                    </p>
+                    <p>
+                        Long before "organic" and "eco-friendly" became buzzwords, Ben was fiercely dedicated to growing 
+                        trees the green way. He refused to expose himself, his children, or his customers to chemicals, instead
+                        pioneering a strict 100% herbicide-free and pesticide-free approach which continues at the farm today.
+                    </p>
+                </div>
+            </section>
+
+            <!-- SECTION 3: Text Left, Image Right on Desktop / Image First on Mobile -->
+            <section class="story-row">
+                <div class="text-block">
+                    <h2>Carrying the Torch Forward</h2>
+                    <p>
+                        Though Ben passed away in 2013, his dream and his legacy live on. Today, his sons Chris and Justin have 
+                        proudly taken over management of the farm, alongside a longtime family friend who is pouring his blood, 
+                        sweat, and tears into the farm every single day. 
+                    </p>
+                    <p>
+                        Between 2017 and 2018, the farm was expanded to 100 acres to meet the demand for high quality, naturally-grown Christmas trees.
+                        The legacy that Ben left lives on vibrantly through his sons, the thousands of local families who 
+                        make our fields part of their annual traditions, and his ten beloved grandchildren who will grow up with the 
+                        farm in their blood. We invite you to come out and be a part of the Ben's family!
+                    </p>
+                </div>
+                <div class="image-block frame-cozy rotate-right">
+                    <img src="/ben_cj.jpg" alt="Ben with sons Chris and Justin" />
+                    <p class="caption">Ben with sons Chris and Justin</p>
+                </div>
+            </section>
+
+            <hr class="divider" />
+
+            <!-- BOTTOM DECK: The Album Collage Grid -->
+            <section class="scrapbook-section">
+                <h3>Memories Scattered Through the Rows</h3>
+                <p class="scrapbook-intro">A glimpse into life on the farm across generations, from grandfathers to grandkids.</p>
+                
+                <div class="scrapbook-grid">
+                    <div class="scrapbook-item frame-cozy item-1">
+                        <img src="/ben_and_ben.jpg" alt="Ben smiling with his grandson" />
+                        <span class="scrapbook-caption">Ben with grandson Ben</span>
+                    </div>
+                    <div class="scrapbook-item frame-cozy item-2">
+                        <img src="/ben_and_kbaby.jpg" alt="Ben with baby granddaughter" />
+                        <span class="scrapbook-caption">Ben with his granddaughter</span>
+                    </div>
+                    <div class="scrapbook-item frame-cozy item-3">
+                        <img src="/ben_sis.jpg" alt="Ben with his sister" />
+                        <span class="scrapbook-caption">Ben with his sister</span>
+                    </div>
+                    <div class="scrapbook-item frame-cozy item-4">
+                        <img src="/ben_and_k.jpg" alt="Ben with his granddaughter" />
+                        <span class="scrapbook-caption">Ben with his granddaughter</span>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
 </Layout>
 
 <style>
-  .background-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-color: var(--pine-dark); /* Fills in while image loads */
-  }
+    /* UTILITY CONTAINER CONTROLS */
+    .background-overlay {
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+        background-color: #0d1a0d;
+    }
+    .bg-image { width: 100%; height: 100%; object-fit: cover; opacity: 0.15; }
 
-  .bg-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.35; /* Keeps it subtle so text remains the focus */
-    filter: saturate(0.8); /* Slightly desaturates to look more "classic" */
-  }
+    .content-container {
+        display: flex; justify-content: center;
+        padding: 120px 20px 60px;
+    }
 
-  .content-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 120px 20px 60px;
-  }
 
-  .glass-box {
-    max-width: 800px;
-    background: rgba(26, 46, 26, 0.7); /* Dark green with transparency */
-    backdrop-filter: blur(8px);       /* Blurs the farm image behind the box */
-    padding: 3rem;
-    border-radius: 8px;
-    border: 1px solid var(--pine-accent);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  }
+    .about-header { border-bottom: 2px solid #109661; padding-bottom: 1.5rem; margin-bottom: 3rem; text-align: center; }
+    .about-header h1 { font-family: Georgia, serif; font-size: 2.5rem; margin: 0; color: #ffffff; }
+    .subtitle { font-style: italic; color: #a3cea0; font-size: 1.1rem; margin-top: 0.5rem; }
 
-  h1 {
-    font-size: 3rem;
-    margin-top: 0;
-    border-bottom: 2px solid var(--pine-accent);
-    padding-bottom: 15px;
-  }
+    /* MOBILE EDITORIAL SYSTEM (FALLBACK ENGINE) */
+    .story-row {
+        display: flex;
+        flex-direction: column; /* Stacks linearly on mobile screens */
+        gap: 2rem; 
+        margin-bottom: 4rem;
+    }
 
-  p {
-    font-size: 1.3rem;
-    line-height: 1.8;
-  }
+    /* THE MAGIC REORDER HOOK FOR SMARTPHONES */
+    .story-row .image-block {
+        order: 1; /* Forces picture to render first at the top of the stack */
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+    .story-row .text-block {
+        order: 2; /* Drops the narrative blocks below the picture node */
+    }
+
+    .text-block h2 { font-family: Georgia, serif; font-size: 1.75rem; margin-top: 0; color: #ffffff; }
+    .text-block p { line-height: 1.7; font-size: 1.05rem; opacity: 0.95; margin-bottom: 1.25rem; }
+
+    /* THE HOMEY / COZY SCRAPBOOK PHOTO FRAME */
+    .frame-cozy {
+        background: #ffffff; padding: 0.75rem 0.75rem 2rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 2px 4px rgba(0, 0, 0, 0.2);
+        border-radius: 2px; transition: transform 0.3s ease-in-out;
+        box-sizing: border-box;
+    }
+    .frame-cozy img { width: 100%; height: auto; display: block; object-fit: cover; border-radius: 1px; }
+    .frame-cozy .caption, .frame-cozy .scrapbook-caption {
+        font-family: "Permanent Marker", "Courier New", cursive, serif;
+        color: #2b3e2b; text-align: center; font-size: 0.95rem; margin: 0.75rem 0 0; font-weight: bold;
+    }
+
+    /* Rotations stay clean across both viewports */
+    .rotate-right { transform: rotate(1.5deg); }
+    .rotate-left { transform: rotate(-1.5deg); }
+    .frame-cozy:hover { transform: rotate(0deg) scale(1.02); }
+
+    .divider { border: 0; height: 1px; background: linear-gradient(to right, transparent, rgba(255,255,255,0.15), transparent); margin: 4rem 0; }
+
+    /* ALBUM SCRAPBOOK GRID (BOTTOM DECK) */
+    .scrapbook-section { text-align: center; }
+    .scrapbook-section h3 { font-family: Georgia, serif; font-size: 1.6rem; margin-bottom: 0.5rem; }
+    .scrapbook-intro { font-size: 1rem; opacity: 0.8; margin-bottom: 2.5rem; font-style: italic; }
+
+    .scrapbook-grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+        margin-top: 2rem;
+    }
+
+    .scrapbook-item.frame-cozy {
+        background: #ffffff;
+        width: 220px; 
+        padding: 0.75rem 0.75rem 2.25rem;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.15);
+        border-radius: 2px;
+        box-sizing: border-box;
+        transition: transform 0.3s ease-in-out, z-index 0s;
+    }
+
+    .scrapbook-item.frame-cozy img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        display: block;
+        border: 1px solid #f0f0f0;
+    }
+
+    .scrapbook-caption {
+        font-family: "Permanent Marker", "Courier New", cursive, serif;
+        color: #2b3e2b;
+        text-align: center;
+        font-size: 0.9rem;
+        font-weight: bold;
+        display: block;
+        margin-top: 0.75rem;
+        line-height: 1.2;
+        white-space: normal;
+    }
+
+    .item-1 { transform: rotate(-3deg); }
+    .item-2 { transform: rotate(2.5deg); }
+    .item-3 { transform: rotate(-2deg); }
+    .item-4 { transform: rotate(4deg); }
+
+    .scrapbook-item.frame-cozy:hover {
+        transform: rotate(0deg) scale(1.06);
+        z-index: 10;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    /* DESKTOP MATRIX ACTUATOR: Shifts to rigid side-by-side grids on monitors */
+    @media (min-width: 768px) {
+        .story-row { 
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr; 
+            gap: 3.5rem; 
+            align-items: center;
+        }
+        
+        .story-row.reverse { 
+            grid-template-columns: 0.8fr 1.2fr; 
+        }
+
+        /* Desktop resets: lets the DOM positions naturally govern left/right placement */
+        .story-row .image-block { order: unset; }
+        .story-row .text-block { order: unset; }
+
+        .image-block.frame-cozy {
+            width: 100%;
+            max-width: 340px;
+            margin: 0 auto;
+        }
+
+        .image-block.frame-cozy img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .scrapbook-grid { 
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); 
+        }
+
+        .legacy-dashboard {
+        padding: 3rem; 
+    }
+    }
 </style>

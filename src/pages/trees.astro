@@ -6,13 +6,7 @@ import Navigation from "../components/Navigation.astro";
 <Layout title="Our Trees - Ben's Christmas Tree Farm">
     <Navigation />
 
-    <div class="background-overlay">
-        <img
-            src="/DJI_0850sm.jpg"
-            alt="Ben's Christmas Tree Farm"
-            class="bg-image"
-        />
-    </div>
+
 
     <main class="content-container">
         <div class="glass-box">
@@ -111,12 +105,7 @@ import Navigation from "../components/Navigation.astro";
 
 <style>
     /* GLOBAL LAYOUT STYLES */
-    .background-overlay {
-        position: fixed;
-        top: 0; left: 0; width: 100%; height: 100%;
-        z-index: -1;
-        background-color: var(--pine-dark);
-    }
+
     
     .bg-image {
         width: 100%; height: 100%; object-fit: cover;
@@ -132,12 +121,22 @@ import Navigation from "../components/Navigation.astro";
     .glass-box {
         max-width: 1000px;
         width: 100%;
-        background: rgba(26, 46, 26, 0.85);
+        background: var(--glass-surface); /* UPDATED: Matches the dashboard tint universally */
         backdrop-filter: blur(10px);
-        padding: 3rem;
         border-radius: 8px;
-        border: 1px solid var(--pine-accent);
+        border: 1px solid var(--glass-border); /* UPDATED: Uses unified fine borders */
         color: var(--cream);
+        box-sizing: border-box;
+        
+        /* ADAPTIVE PADDING: Soft 1rem sides on mobile so grid lists don't look squeezed */
+        padding: 2rem 1rem; 
+    }
+
+    /* HARDWARE BREAKPOINT: Locks back to your full layout breathing room on desktop monitors */
+    @media (min-width: 768px) {
+        .glass-box {
+            padding: 3rem;
+        }
     }
 
     h1 { border-bottom: 2px solid var(--pine-accent); padding-bottom: 10px; font-family: Georgia, serif; }

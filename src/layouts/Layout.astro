@@ -9,6 +9,10 @@
 		<title>Ben's Christmas Tree Farm | Cut Your Own | Harvard, IL</title>
 	</head>
 	<body>
+		<!-- GLOBAL BACKGROUND INFRASTRUCTURE -->
+		<div class="global-background-container">
+			<img src="/DJI_0850sm.jpg" alt="" class="global-bg-image" />
+		</div>
 		<slot />
 	</body>
 </html>
@@ -23,10 +27,32 @@
 </style> -->
 <style is:global>
   :root {
-    --pine-dark: #1a2e1a;    /* Deep forest green background */
+    --pine-dark: #1e351e;    /* Deep forest green background */
     --pine-accent: #4f7942;  /* A lighter green for lines */
     --cream: #fdf5e6;        /* Your warm text color */
+	/* ADD THESE FOR THE GLOWING DASHBOARDS & MUTED TEXT: */
+    --glass-surface: rgba(14, 26, 14, 0.45); /* The clear winner for the card decks */
+    --glass-border: #4f7942;
+    --sage-muted: #a3cea0;   /* Clean leaf green for subtitles and dates */
   }
+    /* CENTRALIZED BACKGROUND LAYERING */
+	.global-background-container {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: -2; /* Keeps it strictly behind everything, including navigation */
+		background-color: var(--pine-dark);
+	}
+
+	.global-bg-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		/* Tune this single value to adjust image brightness site-wide */
+		opacity: 0.22; 
+	}
 
   body {
     margin: 0;
@@ -35,4 +61,29 @@
     color: var(--cream);
     font-family: Georgia, serif;
   }
+  
+  /* UNIFIED DASHBOARD LAYOUT COMPONENT */
+  .glass-dashboard {
+        max-width: 1000px;
+        width: 100%;
+        background: var(--glass-surface); /* UPDATED: Matches the dashboard tint universally */
+        backdrop-filter: blur(10px);
+        border-radius: 8px;
+        border: 1px solid var(--glass-border); /* UPDATED: Uses unified fine borders */
+        color: var(--cream);
+        box-sizing: border-box;
+        
+        /* ADAPTIVE PADDING: Soft 1rem sides on mobile so grid lists don't look squeezed */
+        padding: 2rem 1rem; 
+  }
+  
+
+  /* Universal responsive padding step-up */
+  @media (min-width: 768px) {
+    .glass-dashboard {
+        padding: 3rem;
+    }
+  }
+
+
 </style>

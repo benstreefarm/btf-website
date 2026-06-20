@@ -1,110 +1,163 @@
-
 ---
-import Layout from '../layouts/Layout.astro';
-import Navigation from '../components/Navigation.astro';
+import Layout from "../layouts/Layout.astro";
+import Navigation from "../components/Navigation.astro";
 ---
 
-<Layout title="Contact Us">
-  <Navigation />
-  
-  <div class="background-overlay">
-    <img src="/DJI_0850sm.jpg" alt="Ben's Christmas Tree Farm" class="bg-image" />
-  </div>
+<Layout title="Contact Us | Ben's Christmas Tree Farm">
+    <Navigation />
 
-  <main class="content-container">
-    <div class="glass-box">
-      <h1>Contact Us</h1>
-      
-      <div class="contact-grid">
-        <div class="contact-info">
-          <p><strong>Ben's Christmas Tree Farm</strong><br />
-          7719 Ryan Road<br />
-          Harvard, IL 60033</p>
-          
-          <p><strong>Phone:</strong> (630) 279-0216<br />
-          <strong>Email:</strong> treefarm@gmail.com</p>
-        </div>
 
-        <div class="form-container">
-          <!-- <script type="text/javascript" src="https://form.jotform.com/jsform/53238993165162"></script> -->
-          <script type="text/javascript" src="https://form.jotform.com/jsform/261328901256052"></script>
+
+    <main class="content-container">
+        <div class="glass-dashboard">
+            
+            <header class="contact-header">
+                <h1>Contact the Farm</h1>
+                <p class="subtitle">Have questions about our varieties or planning a visit? Drop us a line.</p>
+            </header>
+
+            <div class="contact-grid">
+                <!-- LEFT SIDE: Direct Details -->
+                <div class="contact-info-panel">
+                    <h2>Get in Touch</h2>
+                    <p class="info-intro">We are a busy working farm, but we check our messages daily and will get back to you as soon as we drop the tools! </p>
+                    
+
+
+                    <div class="info-item">
+                        <strong>📧 Email</strong>
+                        <span>treefarm@gmail.com</span>
+                    </div>
+
+                    <div class="info-item">
+                        <strong>☎️ Phone</strong>
+                        <span>630-279-0216</span>
+                    </div>
+
+                        <div class="info-item">
+                        <strong>📍 Farm Address</strong>
+                        <span>7719 Ryan Rd, Harvard IL 60033</span>
+                    </div>
+                </div>
+
+                <!-- RIGHT SIDE: Native Netlify Form Engine -->
+                <div class="contact-form-panel">
+                    <!-- 
+                      The Magic Attributes:
+                      - 'data-netlify="true"' tells Netlify's build bot to parse this form.
+                      - 'name="farm-contact"' is how the inbox will be labeled in your Netlify dashboard.
+                    -->
+                    <form 
+                        name="farm-contact" 
+                        method="POST" 
+                        data-netlify="true" 
+                        action="/contact/success"
+                        class="native-farm-form"
+                    >
+                        <!-- Crucial hidden input required for static site generators like Astro -->
+                        <input type="hidden" name="form-name" value="farm-contact" />
+
+                        <div class="form-group">
+                            <label for="username">Your Name *</label>
+                            <input type="text" id="username" name="name" required placeholder="Johnny Appleseed" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="useremail">Email Address *</label>
+                            <input type="email" id="useremail" name="email" required placeholder="johnny@example.com" />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="usersubject">Subject</label>
+                            <input type="text" id="usersubject" name="subject" placeholder="Question about Fraser Firs..." />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="usermessage">Message *</label>
+                            <textarea id="usermessage" name="message" rows="6" required placeholder="Tell us how we can help..."></textarea>
+                        </div>
+
+                        <!-- Anti-Spam Honeypot Field (Invisible to human eyes, catches bad bots instantly) -->
+                        <div class="bot-field" style="display:none;">
+                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
         </div>
-       
-      </div>
-    </div>
-  </main>
+    </main>
 </Layout>
 
 <style>
-  /* Reuse your existing background styles */
-  .background-overlay {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    z-index: -1;
-    background-color: var(--pine-dark);
-  }
-  .bg-image {
-    width: 100%; height: 100%; object-fit: cover;
-    opacity: 0.3;
-  }
+/* CONTENT & CORE GEOMETRY */
+    .background-overlay {
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+        background-color: var(--pine-dark); /* FIXED: Points directly to your unified lighter green canvas */
+    }
+    .bg-image { width: 100%; height: 100%; object-fit: cover; opacity: 0.15; }
 
-  .content-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 120px 20px 60px;
-  }
+    .content-container {
+        display: flex; justify-content: center;
+        padding: 120px 20px 60px;
+    }
 
-  .glass-box {
-    max-width: 900px;
-    width: 100%;
-    background: rgba(26, 46, 26, 0.8);
-    backdrop-filter: blur(10px);
-    padding: 3rem;
-    border-radius: 8px;
-    border: 1px solid var(--pine-accent);
-  }
+    .contact-header { border-bottom: 2px solid #109661; padding-bottom: 1.5rem; margin-bottom: 3rem; }
+    .contact-header h1 { font-family: Georgia, serif; font-size: 2.5rem; margin: 0; color: #ffffff; }
+    .subtitle { color: #a3cea0; font-size: 1.1rem; margin-top: 0.5rem; }
 
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns on desktop */
-    gap: 3rem;
-    margin-top: 2rem;
-  }
+    /* LAYOUT DISTRIBUTION MATRIX */
+    .contact-grid {
+        display: grid; grid-template-columns: 1fr; gap: 3.5rem;
+    }
 
-  @media (max-width: 768px) {
-    .contact-grid { grid-template-columns: 1fr; } /* Stacks on mobile */
-  }
+    /* LEFT INFO COLUMN */
+    .contact-info-panel h2 { font-family: Georgia, serif; font-size: 1.75rem; margin-top: 0; color: #fff; }
+    .info-intro { line-height: 1.6; opacity: 0.85; margin-bottom: 2rem; font-size: 1.05rem; }
+    
+    .info-item {
+        display: flex; flex-direction: column; gap: 0.25rem;
+        margin-bottom: 1.5rem; background: rgba(0,0,0,0.2);
+        padding: 1rem; border-radius: 6px; border-left: 3px solid #109661;
+    }
+    .info-item strong { font-size: 1rem; color: #ffffff; }
+    .info-item span { font-size: 1.1rem; color: #a3cea0; }
 
-  h1 { border-bottom: 2px solid var(--pine-accent); padding-bottom: 10px; }
+    /* RIGHT FORM INPUT FIELDS */
+    .native-farm-form { display: flex; flex-direction: column; gap: 1.25rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+    
+    .form-group label { font-weight: bold; font-size: 0.95rem; color: #ffffff; }
+    
+    .form-group input, .form-group textarea {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 0.8rem; border-radius: 4px;
+        color: #ffffff; font-size: 1rem;
+        transition: all 0.2s ease;
+    }
+    
+    .form-group input:focus, .form-group textarea:focus {
+        outline: none;
+        border-color: #15b374;
+        background: rgba(255, 255, 255, 0.1);
+        box-shadow: 0 0 8px rgba(21, 179, 116, 0.3);
+    }
 
-  /* Form Styling */
-  .form-group { margin-bottom: 1.5rem; display: flex; flex-direction: column; }
-  
-  label { margin-bottom: 0.5rem; font-weight: bold; color: var(--cream); }
+    /* SUBMIT ACTION BUTTON */
+    .submit-btn {
+        background: #109661; color: white; border: none;
+        padding: 1rem; font-size: 1.1rem; font-weight: bold;
+        border-radius: 4px; cursor: pointer; transition: background 0.2s ease;
+        margin-top: 0.5rem;
+    }
+    .submit-btn:hover { background: #15b374; }
 
-  input, textarea {
-    padding: 12px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--pine-accent);
-    color: white;
-    border-radius: 4px;
-    font-family: inherit;
-  }
-
-  .submit-btn {
-    background: var(--pine-accent);
-    color: white;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: background 0.3s;
-  }
-
-  .submit-btn:hover { background: #5a8a4b; }
-  .form-note { font-size: 0.8rem; font-style: italic; opacity: 0.7; margin-top: 10px; }
+    /* RESPONSIVE DESKTOP ADAPTATION */
+    @media (min-width: 800px) {
+        .contact-grid { grid-template-columns: 0.9fr 1.1fr; gap: 4.5rem; }
+    }
 </style>
