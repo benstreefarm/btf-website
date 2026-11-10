@@ -1,69 +1,87 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Ben's Christmas Tree Farm | Cut Your Own | Harvard, IL</title>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3" />
+        <link rel="icon" href="/favicon.ico?v=3" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Ben's Christmas Tree Farm | Cut Your Own | Harvard, IL</title>
 
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-BC4ZKB687C"></script>
-		<script is:inline>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BC4ZKB687C"></script>
+        <script is:inline>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
 
-		gtag('config', 'G-BC4ZKB687C');
-		</script>
+        gtag('config', 'G-BC4ZKB687C');
+        </script>
 
-	</head>
-	<body>
-		<!-- GLOBAL BACKGROUND INFRASTRUCTURE -->
-		<div class="global-background-container">
-			<img src="/DJI_0850sm.jpg" alt="" class="global-bg-image" />
-		</div>
-		<slot />
-	</body>
+        <!-- Meta Pixel Code -->
+        <script is:inline>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1914032849186325');
+        fbq('track', 'PageView');
+        </script>
+        <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=1914032849186325&ev=PageView&noscript=1"
+        /></noscript>
+        <!-- End Meta Pixel Code -->
+
+    </head>
+    <body>
+        <!-- GLOBAL BACKGROUND INFRASTRUCTURE -->
+        <div class="global-background-container">
+            <img src="/DJI_0850sm.jpg" alt="" class="global-bg-image" />
+        </div>
+        <slot />
+    </body>
 </html>
 
 <!-- <style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+    html,
+    body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+    }
 </style> -->
 <style is:global>
   :root {
     --pine-dark: #1e351e;    /* Deep forest green background */
     --pine-accent: #4f7942;  /* A lighter green for lines */
     --cream: #fdf5e6;        /* Your warm text color */
-	/* ADD THESE FOR THE GLOWING DASHBOARDS & MUTED TEXT: */
+    /* ADD THESE FOR THE GLOWING DASHBOARDS & MUTED TEXT: */
     --glass-surface: rgba(14, 26, 14, 0.45); /* The clear winner for the card decks */
     --glass-border: #4f7942;
     --sage-muted: #a3cea0;   /* Clean leaf green for subtitles and dates */
   }
     /* CENTRALIZED BACKGROUND LAYERING */
-	.global-background-container {
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		z-index: -2; /* Keeps it strictly behind everything, including navigation */
-		background-color: var(--pine-dark);
-	}
+    .global-background-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2; /* Keeps it strictly behind everything, including navigation */
+        background-color: var(--pine-dark);
+    }
 
-	.global-bg-image {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		/* Tune this single value to adjust image brightness site-wide */
-		opacity: 0.22; 
-	}
+    .global-bg-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* Tune this single value to adjust image brightness site-wide */
+        opacity: 0.22; 
+    }
 
   body {
     margin: 0;
@@ -95,6 +113,5 @@
         padding: 3rem;
     }
   }
-
 
 </style>
