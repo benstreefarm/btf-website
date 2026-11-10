@@ -33,18 +33,48 @@ import Navigation from "../components/Navigation.astro";
                 <header class="dash-header">
                     <h1 class="desktop-hide">Ben's Christmas Tree Farm</h1>
                     <h2 class="status-tag">The only Certified Naturally Grown Christmas tree farm in the Midwest!</h2>
-                    <p class="status-tag">Opening November 27, 2026</p>
+                    <p class="status-tag">Soft Opening Weekend November 21-22, 2026</p>
+                    <p class="status-tag">Grand Opening November 27, 2026</p>
                 </header>
 
-                <section class="dash-section">
-                    <h3>2026 Season Announcement</h3>
-                    <p>
-                        We are hard at work preparing our fields for the upcoming harvest! All of our trees,
+                <section class="dash-section" id="announcement-section">
+                    <!-- Static Fallback HTML (preserves current content & SEO while dynamic fetch loads) -->
+                    <h3 id="announcement-heading">2026 Season Announcement</h3>
+                    <p id="announcement-body">
+                        New for 2026 - "First Cut Weekend" (soft opening) on November 21-22! All of our trees,
                         including over 10,000 Fraser Firs, are 
                         <strong>100% herbicide and pesticide-free</strong>. We provide the saws, the twine, 
                         and free wagon rides into the fields—you just bring the family and dress for the weather.
                     </p>
                 </section>
+
+                <script>
+                    const GIST_URL = "https://gist.githubusercontent.com/benstreefarm/80a3167982e5d7b1146f5b3a67cb2200/raw/announcement.json";
+
+                    async function fetchAnnouncement() {
+                        try {
+                            // Append timestamp parameter to bypass aggressive browser caching
+                            const res = await fetch(`${GIST_URL}?t=${Date.now()}`);
+                            if (!res.ok) return;
+
+                            const data = await res.json();
+                            const headingEl = document.getElementById("announcement-heading");
+                            const bodyEl = document.getElementById("announcement-body");
+
+                            if (data.heading && headingEl) {
+                                headingEl.textContent = data.heading;
+                            }
+                            if (data.message && bodyEl) {
+                                // innerHTML allows bolding/links if included in your Gist string
+                                bodyEl.innerHTML = data.message;
+                            }
+                        } catch (err) {
+                            console.warn("Could not fetch live announcement, using static fallback:", err);
+                        }
+                    }
+
+                    fetchAnnouncement();
+                </script>
 
                 <section class="dash-section pricing-node">
                     <h3>Harvest Pricing</h3>
@@ -86,8 +116,8 @@ import Navigation from "../components/Navigation.astro";
                                 <div class="l">Su</div><div class="l">Mo</div><div class="l">Tu</div><div class="l">We</div><div class="l">Th</div><div class="l">Fr</div><div class="l">Sa</div>
                                 <div class="e"></div><div class="e"></div><div>1</div><div>2</div><div>3</div><div class="b">4</div><div class="g">5</div>
                                 <div class="g">6</div><div>7</div><div>8</div><div>9</div><div>10</div><div class="b">11</div><div class="g">12</div>
-                                <div class="g">13</div><div>14</div><div>15</div><div>16</div><div>17</div><div class="b">18</div><div class="g">19</div>
-                                <div class="g">20</div><div>21</div><div>22</div><div>23</div><div>24</div><div>25</div><div>26</div>
+                                <div class="g">13</div><div>14</div><div>15</div><div>16</div><div>17</div><div class="b">18</div><div class="b">19</div>
+                                <div class="b">20</div><div>21</div><div>22</div><div>23</div><div>24</div><div>25</div><div>26</div>
                                 <div>27</div><div>28</div><div>29</div><div>30</div><div>31</div>
                             </div>
                         </div>
