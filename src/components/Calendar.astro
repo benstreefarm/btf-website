@@ -1,0 +1,68 @@
+---
+// src/components/Calendar.astro
+---
+
+<section class="dash-section calendar-node">
+    <h3>2026 Operating Calendar</h3>
+    <div class="mini-legend">
+        <div><span class="dot green"></span> Full amenities (Horse-drawn wagon rides, Santa)</div>
+        <div><span class="dot blue"></span> Limited amenities (tractor-drawn wagon rides only)</div>
+    </div>
+
+    <div class="mini-months-row">
+        <div class="m-box">
+            <div class="m-title">November 2026</div>
+            <div class="m-grid">
+                <div class="l">Su</div><div class="l">Mo</div><div class="l">Tu</div><div class="l">We</div><div class="l">Th</div><div class="l">Fr</div><div class="l">Sa</div>
+                <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div>
+                <div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div>
+                <div>15</div><div>16</div><div>17</div><div>18</div><div>19</div><div>20</div><div class="b">21</div>
+                <div class="b">22</div><div>23</div><div>24</div><div>25</div><div>26</div>
+                <div class="g">27</div><div class="g">28</div><div class="g">29</div><div>30</div>
+            </div>
+        </div>
+
+        <div class="m-box">
+            <div class="m-title">December 2026</div>
+            <div class="m-grid">
+                <div class="l">Su</div><div class="l">Mo</div><div class="l">Tu</div><div class="l">We</div><div class="l">Th</div><div class="l">Fr</div><div class="l">Sa</div>
+                <div class="e"></div><div class="e"></div><div>1</div><div>2</div><div>3</div><div class="b">4</div><div class="g">5</div>
+                <div class="g">6</div><div>7</div><div>8</div><div>9</div><div>10</div><div class="b">11</div><div class="g">12</div>
+                <div class="g">13</div><div>14</div><div>15</div><div>16</div><div>17</div><div class="b">18</div><div class="b">19</div>
+                <div class="b">20</div><div>21</div><div>22</div><div>23</div><div>24</div><div>25</div><div>26</div>
+                <div>27</div><div>28</div><div>29</div><div>30</div><div>31</div>
+            </div>
+        </div>
+    </div>
+    <p class="santa-footer">On days with full amenities, Santa and horse-drawn wagon rides typically available from 10 AM to 3 PM.</p>
+    <p class="santa-footer">Hours for Black Friday and Saturdays: 9 AM to 4:30 PM</p>
+    <p class="santa-footer">Hours for all other days: 10 AM to 4:30 PM</p>
+</section>
+
+<style>
+    /* Scoped Calendar Component Styles */
+    .dash-section { border-top: 1px solid rgba(255, 255, 255, 0.05); padding-top: 1.25rem; margin-bottom: 2rem; }
+    .dash-section h3 { font-family: Georgia, serif; font-size: 1.25rem; color: #fff; margin: 0 0 0.75rem; }
+    
+    .mini-legend { display: flex; gap: 1.25rem; margin-bottom: 1rem; font-size: 0.85rem; }
+    .dot { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 4px; vertical-align: middle; }
+    .dot.green, .g { background: #109661 !important; color: white; font-weight: bold; }
+    .dot.blue, .b { background: #6a6aff !important; color: white; font-weight: bold; }
+
+    .mini-months-row { display: flex; flex-direction: column; gap: 1.25rem; }
+    .m-box { border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 4px; overflow: hidden; width: 100%; }
+    .m-title { background: #8b3a2b; text-align: center; font-weight: bold; padding: 0.3rem; font-size: 0.9rem; color: #fff; }
+    
+    .m-grid { display: grid; grid-template-columns: repeat(7, 1fr); background: white; color: #222; text-align: center; font-size: 0.8rem; }
+    .m-grid div { padding: 0.35rem 0; border-bottom: 1px solid #f0f0f0; border-right: 1px solid #f0f0f0; }
+    .m-grid .l { background: #f1f5f9; color: #64748b; font-weight: bold; font-size: 0.7rem; }
+    .m-grid .e { background: #f8fafc; }
+    .santa-footer { font-size: 0.85rem; font-style: italic; opacity: 0.8; margin-top: 0.75rem; color: #fecaca; }
+
+    @media (min-width: 950px) {
+        .mini-months-row {
+            flex-direction: row;
+            gap: 1.5rem;
+        }
+    }
+</style>

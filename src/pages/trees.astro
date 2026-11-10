@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
+import Calendar from "../components/Calendar.astro";
 ---
 
 <Layout title="Our Trees - Ben's Christmas Tree Farm">
@@ -47,54 +48,7 @@ import Navigation from "../components/Navigation.astro";
                     <li>White Pine</li>
                 </ul>
             </div>
-
-            <div class="calendar-section">
-                <h2>2026 Season Schedule & Pricing (all trees are Certified Naturally Grown)</h2>
-                
-                <div class="price-info">
-                    <p><strong>Pines:</strong> Starting at $52 ($8 per foot with 6.5 foot minimum)</p>
-                    <p><strong>Firs and Spruces:</strong> Starting at $98 ($15 per foot with 6.5 foot minimum)</p>
-                    <p class="organic-note">Our farm is 100% herbicide-free and pesticide-free</p>
-                </div>
-
-                <div class="legend">
-                    <div class="legend-item"><span class="color-box green-box"></span> 9:00 AM - 4:30 PM</div>
-                    <div class="legend-item"><span class="color-box blue-box"></span> 10:00 AM - 4:30 PM</div>
-                    <p class="santa-note"><em>(Closed all other days. Santa typically available from 10 AM to 3 PM)</em></p>
-                </div>
-
-                <div class="calendar-flex-container">
-                    <div class="month-card">
-                        <div class="month-title">November 2026</div>
-                        <div class="calendar-grid">
-                            <div class="day-label">Su</div><div class="day-label">Mo</div><div class="day-label">Tu</div><div class="day-label">We</div><div class="day-label">Th</div><div class="day-label">Fr</div><div class="day-label">Sa</div>
-                            
-                            <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div>
-                            <div>8</div><div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div>
-                            <div>15</div><div>16</div><div>17</div><div>18</div><div>19</div><div>20</div><div>21</div>
-                            <div>22</div><div>23</div><div>24</div><div>25</div><div>26</div>
-                            <div class="open-green">27</div><div class="open-green">28</div>
-                            <div class="open-blue">29</div><div>30</div>
-                            <div class="pad"></div><div class="pad"></div><div class="pad"></div><div class="pad"></div><div class="pad"></div>
-                        </div>
-                    </div>
-
-                    <div class="month-card">
-                        <div class="month-title">December 2026</div>
-                        <div class="calendar-grid">
-                            <div class="day-label">Su</div><div class="day-label">Mo</div><div class="day-label">Tu</div><div class="day-label">We</div><div class="day-label">Th</div><div class="day-label">Fr</div><div class="day-label">Sa</div>
-                            
-                            <div class="pad"></div><div class="pad"></div>
-                            <div>1</div><div>2</div><div>3</div><div>4</div><div class="open-green">5</div>
-                            <div class="open-blue">6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div class="open-green">12</div>
-                            <div class="open-blue">13</div><div>14</div><div>15</div><div>16</div><div>17</div><div>18</div><div>19</div>
-                            <div>20</div><div>21</div><div>22</div><div>23</div><div>24</div><div>25</div><div>26</div>
-                            <div>27</div><div>28</div><div>29</div><div>30</div><div>31</div>
-                            <div class="pad"></div><div class="pad"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <Calendar />
 
             <div class="cta-section">
                 <p>Our trees are certified naturally grown!</p>
