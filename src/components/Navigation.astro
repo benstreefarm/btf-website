@@ -1,13 +1,14 @@
 <nav class="navbar">
-  <div class="logo">Ben's Christmas Tree Farm</div>
+  <div class="logo nav-brand-title">Ben's Christmas Tree Farm</div>
   <ul class="nav-links">
     <li><a href="/">Home</a></li>
+    <li><a href="/features">Features</a></li>
     <li><a href="/about">About</a></li>
     <li><a href="/trees">Our Trees</a></li>
     <li><a href="/visit">Visit</a></li>
-    <li><a href="/contact">Contact</a></li>
   </ul>
 </nav>
+
 <style>
   .navbar {
     display: flex;
@@ -20,7 +21,6 @@
     position: sticky;
     top: 0;
     z-index: 1000;
-    /* This is the key: allow items to wrap to a new line if they don't fit */
     flex-wrap: wrap; 
   }
 
@@ -30,7 +30,6 @@
     font-size: 1.5rem;
     color: var(--cream);
     text-decoration: none;
-    /* Ensure the logo doesn't get squashed */
     flex: 1 1 auto;
   }
 
@@ -61,7 +60,7 @@
 
     .logo {
       text-align: center;
-      width: 100%; /* Forces the logo to take its own line */
+      width: 100%;
       margin-bottom: 0.5rem;
     }
 
@@ -72,45 +71,38 @@
     }
     
     .nav-links a {
-      font-size: 0.8rem; /* Slightly smaller text for tight spaces */
+      font-size: 0.8rem;
     }
   }
-  /* TARGET MOBILE DEVICES BELOW 480PX WIDE (eliminate line wrapping on title and nav bar etc 5/21/26) */
+
+  /* TARGET MOBILE DEVICES BELOW 480PX WIDE */
   @media (max-width: 480px) {
-    /* Compress the main branding title text size slightly */
     nav h1, .nav-brand-title { 
-        font-size: 1.5rem !important; 
-        white-space: nowrap; /* Forces the business name onto exactly one line */
-        letter-spacing: -0.5px;
+      font-size: 1.5rem !important; 
+      white-space: nowrap;
+      letter-spacing: -0.5px;
     }
 
-    /* Target the link container row */
     .nav-links-container, nav ul {
-        display: flex !important;
-        justify-content: space-between !important;
-        gap: 0.5rem !important; /* Shrinks the massive space between menu words */
-        padding: 0 0.5rem !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      gap: 0.5rem !important;
+      padding: 0 0.5rem !important;
     }
 
-    /* Target individual menu text links */
     .nav-links-container a, nav ul li a {
-        font-size: 0.8rem !important; /* Scales text down just enough to preserve single-line flow */
-        white-space: nowrap; /* Guarantees "OUR TREES" never breaks into a stack */
-        letter-spacing: 0px;
+      font-size: 0.8rem !important;
+      white-space: nowrap;
+      letter-spacing: 0px;
     }
-}
+  }
 
-/* THE FLUID BRAND TITLE ENGINE */
-.nav-brand-title, nav h1 {
-    /* clamp(MIN, PREFERRED, MAX)
-       - Min: Never shrinks smaller than 1.4rem (perfectly readable on an iPhone SE)
-       - Preferred: Scales dynamically at 5% of the total viewport width
-       - Max: Cap it at 2.2rem so it doesn't get oversized on a 4K desktop monitor
-    */
+  /* THE FLUID BRAND TITLE ENGINE */
+  .nav-brand-title, nav h1 {
     font-size: clamp(1.4rem, 5vw, 2.2rem) !important;
-    white-space: nowrap; /* Rigid rule: Absolutely forbids the text from splitting into two lines */
-    letter-spacing: -0.5px; /* Slightly tightens letter tracking on mobile for a premium editorial look */
+    white-space: nowrap;
+    letter-spacing: -0.5px;
     overflow: hidden;
-    text-overflow: ellipsis; /* Fallback: If a tiny screen somehow runs out of pixels, it softens the edge gracefully */
-}
+    text-overflow: ellipsis;
+  }
 </style>

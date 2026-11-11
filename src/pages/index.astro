@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Navigation from "../components/Navigation.astro";
 import Calendar from "../components/Calendar.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout title="Ben's Christmas Tree Farm | Cut Your Own | Harvard, IL">
@@ -39,7 +40,6 @@ import Calendar from "../components/Calendar.astro";
                 </header>
 
                 <section class="dash-section" id="announcement-section">
-                    <!-- Static Fallback HTML (preserves current content & SEO while dynamic fetch loads) -->
                     <h3 id="announcement-heading">2026 Season Announcement</h3>
                     <p id="announcement-body">
                         New for 2026 - "First Cut Weekend" (soft opening) on November 21-22! All of our trees,
@@ -54,7 +54,6 @@ import Calendar from "../components/Calendar.astro";
 
                     async function fetchAnnouncement() {
                         try {
-                            // Append timestamp parameter to bypass aggressive browser caching
                             const res = await fetch(`${GIST_URL}?t=${Date.now()}`);
                             if (!res.ok) return;
 
@@ -66,7 +65,6 @@ import Calendar from "../components/Calendar.astro";
                                 headingEl.textContent = data.heading;
                             }
                             if (data.message && bodyEl) {
-                                // innerHTML allows bolding/links if included in your Gist string
                                 bodyEl.innerHTML = data.message;
                             }
                         } catch (err) {
@@ -93,6 +91,8 @@ import Calendar from "../components/Calendar.astro";
 
                 <Calendar />
 
+                <Footer />
+
             </div>
         </div>
     </div>
@@ -111,7 +111,6 @@ import Calendar from "../components/Calendar.astro";
     .split-hero-container {
         display: grid;
         grid-template-columns: 1fr;
-        /* FIXED: Accounts for navbar height cleanly, zero gap */
         min-height: calc(100vh - 80px);
         width: 100vw;
         padding-top: 0; 
@@ -123,9 +122,9 @@ import Calendar from "../components/Calendar.astro";
     .hero-image-side {
         position: relative;
         width: 100%;
-        height: 40vh; /* Takes up a compact top window on mobile viewports */
+        height: 40vh;
         overflow: hidden;
-        margin-top: 0; /* FIXED */
+        margin-top: 0;
     }
 
     .split-bg {
@@ -145,10 +144,8 @@ import Calendar from "../components/Calendar.astro";
 
     /* RIGHT SIDE CONFIGS (THE BLURRED DASHBOARD) */
     .hero-dash-side {
-        /* Swap the hardcoded 0.92 color for your unified design system token */
         background: var(--glass-surface); 
         backdrop-filter: blur(12px); 
-
         color: #f4efe6;
         border-top: 1px solid rgba(255, 255, 255, 0.05);
         margin-top: 0;
@@ -159,7 +156,6 @@ import Calendar from "../components/Calendar.astro";
     }
 
     .dash-header { margin-bottom: 1.5rem; }
-    /* FIXED: Prevent heading top-margin from pushing the container down */
     .dash-header h1 { font-family: Georgia, serif; font-size: 2rem; margin: 0; color: #ffffff; }
     .status-tag { color: #a3cea0; font-weight: bold; font-size: 1.05rem; margin-top: 0.25rem; }
 
@@ -185,22 +181,6 @@ import Calendar from "../components/Calendar.astro";
     .btn-link.secondary { border: 1px solid rgba(255, 255, 255, 0.15); color: #f4efe6; }
     .btn-link.secondary:hover { background: rgba(255, 255, 255, 0.03); }
 
-    /* COMPACT GRID CONFIGS */
-    .mini-legend { display: flex; gap: 1.25rem; margin-bottom: 1rem; font-size: 0.85rem; }
-    .dot { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 4px; vertical-align: middle; }
-    .dot.green, .g { background: #109661 !important; color: white; font-weight: bold; }
-    .dot.blue, .b { background: #6a6aff !important; color: white; font-weight: bold; }
-
-    .mini-months-row { display: flex; flex-direction: column; gap: 1.25rem; }
-    .m-box { border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 4px; overflow: hidden; width: 100%; }
-    .m-title { background: #8b3a2b; text-align: center; font-weight: bold; padding: 0.3rem; font-size: 0.9rem; color: #fff; }
-    
-    .m-grid { display: grid; grid-template-columns: repeat(7, 1fr); background: white; color: #222; text-align: center; font-size: 0.8rem; }
-    .m-grid div { padding: 0.35rem 0; border-bottom: 1px solid #f0f0f0; border-right: 1px solid #f0f0f0; }
-    .m-grid .l { background: #f1f5f9; color: #64748b; font-weight: bold; font-size: 0.7rem; }
-    .m-grid .e { background: #f8fafc; }
-    .santa-footer { font-size: 0.85rem; font-style: italic; opacity: 0.8; margin-top: 0.75rem; color: #fecaca; }
-
     /* RESPONSIVE VISIBILITY SWITCHES */
     .mobile-hide {
         display: none !important;
@@ -208,6 +188,8 @@ import Calendar from "../components/Calendar.astro";
     
     .desktop-hide {
         display: block;
+        font-size: clamp(1.4rem, 5.5vw, 2rem) !important;
+        white-space: nowrap;
         margin-bottom: 0.5rem;
     }
 
@@ -215,11 +197,7 @@ import Calendar from "../components/Calendar.astro";
     @media (min-width: 950px) {
         .split-hero-container {
             grid-template-columns: 45vw 55vw;
-            /* FIXED: Locks layout below navbar height bounds cleanly on desktop */
-            /* height: calc(100vh - 80px);
-            min-height: calc(100vh - 80px);
-            height: calc(100vh - 64px); */
-            min-height: calc(100vh - 64px);
+            height: calc(100vh - 64px);
             overflow: hidden;
         }
 
@@ -232,7 +210,7 @@ import Calendar from "../components/Calendar.astro";
         }
 
         .hero-image-side {
-            height: 100%; /* Spans full height of screen */
+            height: 100%;
         }
 
         .image-overlay-text {
@@ -244,13 +222,9 @@ import Calendar from "../components/Calendar.astro";
 
         .hero-dash-side {
             height: 100%;
-            overflow-y: auto; /* Adds a clean independent scroll bar to the text dashboard side only */
+            overflow-y: auto;
             border-top: none;
             border-left: 1px solid rgba(255, 255, 255, 0.05);
-            
-            /* ADD THESE TWO LINES */
-            /*background: var(--glass-surface); 
-            backdrop-filter: blur(12px); */
             background-color: rgba(14, 26, 14, 0.15) !important; 
             backdrop-filter: blur(12px) !important;
         }
@@ -258,18 +232,5 @@ import Calendar from "../components/Calendar.astro";
         .dash-scroll-wrapper {
             padding: 3rem;
         }
-
-        .mini-months-row {
-            flex-direction: row; /* Puts November and December side-by-side on desktop */
-            gap: 1.5rem;
-        }
-    }
-
-    /* Keep the main mobile dashboard header text visible and fluid */
-    .desktop-hide {
-        display: block;
-        font-size: clamp(1.4rem, 5.5vw, 2rem) !important; /* Dynamically scales the home card title */
-        white-space: nowrap;
-        margin-bottom: 0.5rem;
     }
 </style>
