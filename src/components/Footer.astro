@@ -1,0 +1,61 @@
+---
+// src/components/Footer.astro
+---
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-info">
+            <strong>Ben's Christmas Tree Farm</strong>
+            <span>Harvard, IL • Certified Naturally Grown</span>
+        </div>
+        <a href="/contact" class="footer-contact-btn">Contact Us</a>
+    </div>
+</footer>
+
+<style>
+    .site-footer {
+        background: rgba(14, 26, 14, 0.85);
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 1.5rem;
+        margin-top: 2rem;
+        color: var(--cream);
+        border-radius: 6px;
+    }
+
+    .footer-content {
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .footer-info {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        font-size: 0.9rem;
+    }
+
+    .footer-info span {
+        color: var(--sage-muted);
+        font-size: 0.85rem;
+    }
+
+    .footer-contact-btn {
+        background: #109661;
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 0.6rem 1.25rem;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        transition: background 0.2s ease;
+    }
+
+    .footer-contact-btn:hover {
+        background: #15b374;
+    }
+</style>
