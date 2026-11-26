@@ -8,7 +8,15 @@
             <strong>Ben's Christmas Tree Farm</strong>
             <span>Harvard, IL • Certified Naturally Grown</span>
         </div>
-        <a href="/contact" class="footer-contact-btn">Contact Us</a>
+        <div class="footer-actions">
+            <a 
+                href="sms:+16304921116?body=Hi%20Ben's%20Tree%20Farm!%20Quick%20question%3A%20" 
+                class="footer-btn text-btn"
+            >
+                Text Us
+            </a>
+            <a href="/contact" class="footer-btn contact-btn">Contact Us</a>
+        </div>
     </div>
 </footer>
 
@@ -44,18 +52,45 @@
         font-size: 0.85rem;
     }
 
-    .footer-contact-btn {
-        background: #109661;
-        color: #ffffff;
+    .footer-actions {
+        display: flex;
+        gap: 0.75rem;
+        align-items: center;
+    }
+
+    .footer-btn {
         text-decoration: none;
         font-weight: bold;
         padding: 0.6rem 1.25rem;
         border-radius: 4px;
         font-size: 0.9rem;
-        transition: background 0.2s ease;
+        transition: all 0.2s ease;
+        white-space: nowrap;
     }
 
-    .footer-contact-btn:hover {
+    .contact-btn {
+        background: #109661;
+        color: #ffffff;
+    }
+
+    .contact-btn:hover {
         background: #15b374;
+    }
+
+    .text-btn {
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: var(--cream);
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .text-btn:hover {
+        background: rgba(255, 255, 255, 0.12);
+    }
+
+    /* Hide the SMS tap-to-text button on desktop monitors */
+    @media (min-width: 768px) {
+        .text-btn {
+            display: none;
+        }
     }
 </style>
